@@ -1,0 +1,8 @@
+# Ignore all files with .swp extension
+#*.swp
+
+# Ignore the node_modules folder
+exercise/target
+
+# Ignore a specific file
+exercise/Cargo.lock
