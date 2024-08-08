@@ -1,8 +1,9 @@
 ## Keywords
-| Keyword | Link                                                     |
-| ------- | -------------------------------------------------------- |
-| `trait` | [Here](https://doc.rust-lang.org/std/keyword.trait.html) |
-| `mut`   | [Here](https://doc.rust-lang.org/std/keyword.mut.html)   |
+| Keyword      | Link                                                      |
+| ------------ | --------------------------------------------------------- |
+| All Keywords | [Here](https://doc.rust-lang.org/std/index.html#keywords) |
+| `trait`      | [Here](https://doc.rust-lang.org/std/keyword.trait.html)  |
+| `mut`        | [Here](https://doc.rust-lang.org/std/keyword.mut.html)    |
 
 
 ## Details
