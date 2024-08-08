@@ -16,6 +16,13 @@
 
 ## Language Features
 
+### References
+* [Link](https://doc.rust-lang.org/std/primitive.reference.html)
+* [Rust Book Ref](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+* A reference represents a borrow of some owned value. You can get one by using the `&` or `&mut` operators on a value, or by using a `ref` or `ref mut` pattern.
+* A reference is just a pointer that is assumed to be aligned, not null, and pointing to memory containing a valid value of `T`
+* We call the action of creating a reference borrowing. As in real life, if a person owns something, you can borrow it from them. When you’re done, you have to give it back. You don’t own it.
+
 ### Traits
 * [Link](https://doc.rust-lang.org/rust-by-example/trait.html)
 * A trait is like an interface that data types can implement. 
