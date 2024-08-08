@@ -1,9 +1,15 @@
 ## Links
 
-| Description     | Link                                                         |
-| --------------- | ------------------------------------------------------------ |
-| std::fmt        | [Here](https://doc.rust-lang.org/std/fmt/)                   |
-| Rust by Example | [Here](https://doc.rust-lang.org/rust-by-example/index.html) |
+| Description        | Link                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| Rust Official Book | [Here](https://doc.rust-lang.org/book/title-page.html)       |
+| Rust by Example    | [Here](https://doc.rust-lang.org/rust-by-example/index.html) |
+| std::fmt           | [Here](https://doc.rust-lang.org/std/fmt/)                   |
+| Primitives         | [Here](https://doc.rust-lang.org/std/index.html#primitives)  |
+| Modules            | [Here](https://doc.rust-lang.org/std/index.html#modules)     |
+| Macros             | [Here](https://doc.rust-lang.org/std/index.html#macros)      |
+| Keywords           | [Here](https://doc.rust-lang.org/std/index.html#keywords)    |
+
 
 
 
