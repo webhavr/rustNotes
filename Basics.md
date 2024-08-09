@@ -73,3 +73,12 @@
 
 * Python is a dynamically typed language, while C++ and Rust are statically typed.
 * In languages like C, type safety is weaker. You can cast data to different types, potentially leading to runtime errors if the cast is invalid. 
+
+### Metaprogramming
+* Metaprogramming is a programming technique where a program can manipulate or generate other programs as its data. 
+* In essence, it's code that writes code.
+* **Examples**:
+    * **Macros**: Language constructs that allow code generation at compile time (e.g., Rust, Lisp).
+    * **Templates:** Parametric polymorphism in languages like C++ for code generation based on types.
+    * Reflection: The ability of a program to inspect its own structure at runtime (e.g., Java, Python).
+    * Code Generation: Creating new code based on specific requirements or patterns.   

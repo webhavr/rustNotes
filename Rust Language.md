@@ -9,6 +9,7 @@
 | Modules            | [Here](https://doc.rust-lang.org/std/index.html#modules)     |
 | Macros             | [Here](https://doc.rust-lang.org/std/index.html#macros)      |
 | Keywords           | [Here](https://doc.rust-lang.org/std/index.html#keywords)    |
+| Macros| [Here](https://doc.rust-lang.org/book/ch19-06-macros.html)|
 
 
 
@@ -36,7 +37,18 @@
 * A module is a container for zero or more items.
 * A module item is a module, surrounded in braces, named, and prefixed with the keyword `mod`
 
+### Macros
+* [Rust Book Ref](https://doc.rust-lang.org/book/ch19-06-macros.html)
+* A function signature must declare the number and type of parameters the function has. 
+* Macros, on the other hand, can take a variable number of parameters: we can call `println!("hello")` with one argument or `println!("hello {}", name)` with two arguments.
+* The downside to implementing a macro instead of a function is that macro definitions are more complex than function definitions because you’re writing Rust code that writes Rust code
+* Similar to Templates in C++.
 
+### Panic
+* [Link](https://doc.rust-lang.org/std/macro.panic.html)
+* Panics the current thread.
+* This allows a program to terminate immediately and provide feedback to the caller of the program.
+* This macro is the perfect way to assert conditions in example code and in tests
 
 ### References
 * [Link](https://doc.rust-lang.org/std/primitive.reference.html)
