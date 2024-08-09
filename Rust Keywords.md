@@ -7,7 +7,7 @@
 | `const`      | [Here](https://doc.rust-lang.org/std/keyword.const.html)  |
 | `static`     | [Here](https://doc.rust-lang.org/std/keyword.static.html) |
 | `type`      | [Here](https://doc.rust-lang.org/std/keyword.type.html)  |
-| `mut`        | [Here](https://doc.rust-lang.org/std/keyword.mut.html)    |
+| `self`        | [Here](https://doc.rust-lang.org/std/keyword.self.html)    |
 | `const`      | [Here](https://doc.rust-lang.org/std/keyword.const.html)  |
 | `static`     | [Here](https://doc.rust-lang.org/std/keyword.static.html) |
 
@@ -48,4 +48,10 @@
 * Define an alias for an existing type.
 * `type` does not create a new type
 * Similar to `typedef` in C++
+
+### `self`
+* [Link](https://doc.rust-lang.org/std/keyword.self.html)
+* `self` is used in two situations:
+  1. referencing the current module
+  2. marking the receiver of a method.
 
