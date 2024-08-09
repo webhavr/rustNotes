@@ -67,7 +67,7 @@
 ## Language Basics
 ### Rust Primitives
 * [Link](https://doc.rust-lang.org/std/index.html#primitives)
-* [!Summary Image](https://drive.google.com/file/d/1JBkldbsViCtjVAqQ9zvPAvvKFlYSdIgv/view?usp=sharing)
+* ![Summary Image](!https://drive.google.com/file/d/1JBkldbsViCtjVAqQ9zvPAvvKFlYSdIgv/view?usp=sharing)
 
 ### Crates
 * [Rust Book Ref](https://doc.rust-lang.org/reference/crates-and-source-files.html)
