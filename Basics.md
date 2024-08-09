@@ -1,3 +1,10 @@
+- [Statically typed and Dynamically Typed Languages](#statically-typed-and-dynamically-typed-languages)
+- [LLVM](#llvm)
+- [Hygienic Macros](#hygienic-macros)
+- [Imperative \& Functional Language](#imperative--functional-language)
+- [Type Safety](#type-safety)
+- [Metaprogramming](#metaprogramming)
+
 ### Statically typed and Dynamically Typed Languages
 
 *   A statically typed language is one where the data type of a variable is checked and verified at compile time.

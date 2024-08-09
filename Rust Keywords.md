@@ -1,4 +1,10 @@
-[[TOC]]
+- [Keywords](#keywords)
+- [Details](#details)
+  - [`mut`](#mut)
+  - [`const`](#const)
+  - [`static`](#static)
+  - [`type`](#type)
+  - [`self`](#self)
 
 ## Keywords
 | Keyword      | Link                                                      |

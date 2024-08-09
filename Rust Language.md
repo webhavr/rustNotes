@@ -1,5 +1,17 @@
 ## Links
 
+- [Links](#links)
+- [Language Features](#language-features)
+  - [Crates](#crates)
+  - [Item](#item)
+  - [Module](#module)
+  - [Macros](#macros)
+  - [Panic](#panic)
+  - [References](#references)
+  - [Traits](#traits)
+    - [Debug Trait](#debug-trait)
+
+
 | Description        | Link                                                         |
 | ------------------ | ------------------------------------------------------------ |
 | Rust Official Book | [Here](https://doc.rust-lang.org/book/title-page.html)       |
@@ -9,10 +21,7 @@
 | Modules            | [Here](https://doc.rust-lang.org/std/index.html#modules)     |
 | Macros             | [Here](https://doc.rust-lang.org/std/index.html#macros)      |
 | Keywords           | [Here](https://doc.rust-lang.org/std/index.html#keywords)    |
-| Macros| [Here](https://doc.rust-lang.org/book/ch19-06-macros.html)|
-
-
-
+| Macros             | [Here](https://doc.rust-lang.org/book/ch19-06-macros.html)   |
 
 
 ## Language Features
@@ -48,7 +57,17 @@
 * [Link](https://doc.rust-lang.org/std/macro.panic.html)
 * Panics the current thread.
 * This allows a program to terminate immediately and provide feedback to the caller of the program.
-* This macro is the perfect way to assert conditions in example code and in tests
+*- [Links](#links)
+- [Links](#links)
+- [Language Features](#language-features)
+  - [Crates](#crates)
+  - [Item](#item)
+  - [Module](#module)
+  - [Macros](#macros)
+  - [Panic](#panic)
+  - [References](#references)
+  - [Traits](#traits)
+    - [Debug Trait](#debug-trait)
 
 ### References
 * [Link](https://doc.rust-lang.org/std/primitive.reference.html)
