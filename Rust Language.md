@@ -16,6 +16,28 @@
 
 ## Language Features
 
+### Crates
+* [Rust Book Ref](https://doc.rust-lang.org/reference/crates-and-source-files.html)
+* A crate is a unit of compilation and linking, as well as versioning, distribution, and runtime loading.
+* Each compilation processes a single crate in source form, and if successful, produces a single crate in binary form: either an executable or some sort of library.
+* The Rust compiler is always invoked with a single source file as input, and always produces a single output crate
+* A Rust source file describes a module
+* Each source file contains a sequence of zero or more Item definitions
+
+### Item
+* [Rust Book Ref](https://doc.rust-lang.org/reference/items.html)
+* An item is a component of a crate.
+* Items are organized within a crate by a nested set of modules.
+* Every crate has a single "outermost" anonymous module; all further items within the crate have paths within the module tree of the crate.
+* Items are entirely determined at compile-time, generally remain fixed during execution, and may reside in read-only memory.
+  
+### Module
+* [Rust Book Ref](https://doc.rust-lang.org/reference/items/modules.html)
+* A module is a container for zero or more items.
+* A module item is a module, surrounded in braces, named, and prefixed with the keyword `mod`
+
+
+
 ### References
 * [Link](https://doc.rust-lang.org/std/primitive.reference.html)
 * [Rust Book Ref](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)

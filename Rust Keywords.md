@@ -6,6 +6,10 @@
 | `mut`        | [Here](https://doc.rust-lang.org/std/keyword.mut.html)    |
 | `const`      | [Here](https://doc.rust-lang.org/std/keyword.const.html)  |
 | `static`     | [Here](https://doc.rust-lang.org/std/keyword.static.html) |
+| `type`      | [Here](https://doc.rust-lang.org/std/keyword.type.html)  |
+| `mut`        | [Here](https://doc.rust-lang.org/std/keyword.mut.html)    |
+| `const`      | [Here](https://doc.rust-lang.org/std/keyword.const.html)  |
+| `static`     | [Here](https://doc.rust-lang.org/std/keyword.static.html) |
 
 
 ## Details
@@ -39,4 +43,9 @@
   * 2 types
     * Simple statics
     * Mutable statics
+
+### `type`
+* Define an alias for an existing type.
+* `type` does not create a new type
+* Similar to `typedef` in C++
 
