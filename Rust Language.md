@@ -1,7 +1,13 @@
 ## Links
 
 - [Links](#links)
-- [Language Features](#language-features)
+- [Pending](#pending)
+- [Rust Benefits](#rust-benefits)
+  - [Compile time memory safety](#compile-time-memory-safety)
+  - [No undefined runtime behavior](#no-undefined-runtime-behavior)
+  - [Modern language features](#modern-language-features)
+- [Language Basics](#language-basics)
+  - [Rust Primitives](#rust-primitives)
   - [Crates](#crates)
   - [Item](#item)
   - [Module](#module)
@@ -24,7 +30,44 @@
 | Macros             | [Here](https://doc.rust-lang.org/book/ch19-06-macros.html)   |
 
 
-## Language Features
+## Pending
+* [ ] unsafe
+* [ ] Defined behavior for everything
+* [ ] Array Data Type
+* [ ] Vector Data Type
+
+## Rust Benefits
+
+### Compile time memory safety
+* Whole classes of memory bugs are prevented at compile time
+* No uninitialized variables.
+* No double-frees.
+* No use-after-free.
+* No NULL pointers.
+* No forgotten locked mutexes.
+* No data races between threads.
+* No iterator invalidation.
+
+### No undefined runtime behavior
+* What a Rust statement does is never left unspecified
+* Array access is bounds checked.
+* Integer overflow is defined (panic or wrap-around).
+
+### Modern language features
+* Enums and pattern matching.
+* Generics.
+* No overhead FFI.
+* Zero-cost abstractions.
+* Great compiler errors.
+* Built-in dependency manager.
+* Built-in support for testing.
+* Excellent Language Server Protocol support
+
+
+## Language Basics
+### Rust Primitives
+* [Link](https://doc.rust-lang.org/std/index.html#primitives)
+* [!Summary Image](https://drive.google.com/file/d/1JBkldbsViCtjVAqQ9zvPAvvKFlYSdIgv/view?usp=sharing)
 
 ### Crates
 * [Rust Book Ref](https://doc.rust-lang.org/reference/crates-and-source-files.html)

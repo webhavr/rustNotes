@@ -1,9 +1,17 @@
+- [Pending](#pending)
 - [Statically typed and Dynamically Typed Languages](#statically-typed-and-dynamically-typed-languages)
 - [LLVM](#llvm)
 - [Hygienic Macros](#hygienic-macros)
 - [Imperative \& Functional Language](#imperative--functional-language)
 - [Type Safety](#type-safety)
 - [Metaprogramming](#metaprogramming)
+
+### Pending
+* [ ] Double Free
+* [ ] Use After Free
+* [ ] Iterator invalidation
+* [ ] Integer Overflow
+* [ ] FFI 
 
 ### Statically typed and Dynamically Typed Languages
 
