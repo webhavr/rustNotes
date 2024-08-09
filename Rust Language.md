@@ -6,8 +6,15 @@
   - [Compile time memory safety](#compile-time-memory-safety)
   - [No undefined runtime behavior](#no-undefined-runtime-behavior)
   - [Modern language features](#modern-language-features)
+- [Rust Primitives](#rust-primitives)
+  - [Slice](#slice)
+  - [str](#str)
+  - [Reference](#reference)
+  - [Pointer](#pointer)
+  - [Tuple](#tuple)
+  - [usize](#usize)
+  - [isize](#isize)
 - [Language Basics](#language-basics)
-  - [Rust Primitives](#rust-primitives)
   - [Crates](#crates)
   - [Item](#item)
   - [Module](#module)
@@ -64,11 +71,31 @@
 * Excellent Language Server Protocol support
 
 
-## Language Basics
-### Rust Primitives
+## Rust Primitives
 * [Link](https://doc.rust-lang.org/std/index.html#primitives)
-* ![Summary Image](https://drive.google.com/uc?id=1JBkldbsViCtjVAqQ9zvPAvvKFlYSdIgv)
+* ![Primitives](https://drive.google.com/uc?id=1JBkldbsViCtjVAqQ9zvPAvvKFlYSdIgv)
 
+### Slice
+* [Link](https://doc.rust-lang.org/std/primitive.slice.html)
+* A dynamically-sized view into a contiguous sequence, `[T]`
+* Slices are a view into a block of memory represented as a pointer and a length.
+* Slices are either mutable or shared. 
+  * The shared slice type is `&[T]`
+  * The mutable slice type is &mut `[T]`
+
+### str
+* [Link](https://doc.rust-lang.org/std/primitive.str.html)
+* The str type, also called a ‘string slice’, is the most primitive string type
+* ![String Slice](https://drive.google.com/uc?id=1tDhRkXwiMjMbueeu93_YXhsiiY5WgZgO)
+* A `&str` is made up of two components: a pointer to some bytes, and a length.
+
+### Reference
+### Pointer
+### Tuple
+### usize
+### isize
+
+## Language Basics
 ### Crates
 * [Rust Book Ref](https://doc.rust-lang.org/reference/crates-and-source-files.html)
 * A crate is a unit of compilation and linking, as well as versioning, distribution, and runtime loading.
