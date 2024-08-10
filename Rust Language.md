@@ -143,6 +143,7 @@ Pointer alignment in Rust refers to the memory address where a value can be safe
 
 ### fn
 ### unit
+* [Link](https://doc.rust-lang.org/std/primitive.unit.html)
 * ![Unit Primitive](https://drive.google.com/uc?id=19fdHDBwGRa5VcKRHEO1j5TFkoldSlqXv)
 
 ## Language Basics
