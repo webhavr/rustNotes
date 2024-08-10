@@ -127,6 +127,12 @@ Pointer alignment in Rust refers to the memory address where a value can be safe
   * **Correctness**: Incorrect alignment can lead to unexpected behavior or crashes.
 
 ### Tuple
+* [Link](https://doc.rust-lang.org/std/primitive.tuple.html)
+* A finite heterogeneous sequence
+* Tuples are finite. In other words, a tuple has a length.
+* Tuples are heterogeneous. This means that each element of the tuple can have a different type.
+* Tuples are a sequence. This means that they can be accessed by position; this is called ‘tuple indexing’
+ 
 ### usize
 ### isize
 
