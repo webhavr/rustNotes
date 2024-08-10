@@ -6,6 +6,7 @@
   - [Compile time memory safety](#compile-time-memory-safety)
   - [No undefined runtime behavior](#no-undefined-runtime-behavior)
   - [Modern language features](#modern-language-features)
+- [Rust Structs](#rust-structs)
 - [Rust Primitives](#rust-primitives)
   - [Slice](#slice)
   - [str](#str)
@@ -70,6 +71,19 @@
 * Built-in dependency manager.
 * Built-in support for testing.
 * Excellent Language Server Protocol support
+
+## Rust Structs
+
+| Struct          | Link                                                         |
+| --------------- | ------------------------------------------------------------ |
+| Vector          | [Here](https://doc.rust-lang.org/std/vec/struct.Vec.html)    |
+| Rust by Example | [Here](https://doc.rust-lang.org/rust-by-example/index.html) |
+| std::fmt        | [Here](https://doc.rust-lang.org/std/fmt/)                   |
+| Primitives      | [Here](https://doc.rust-lang.org/std/index.html#primitives)  |
+| Modules         | [Here](https://doc.rust-lang.org/std/index.html#modules)     |
+| Macros          | [Here](https://doc.rust-lang.org/std/index.html#macros)      |
+| Keywords        | [Here](https://doc.rust-lang.org/std/index.html#keywords)    |
+| Macros          | [Here](https://doc.rust-lang.org/book/ch19-06-macros.html)   |
 
 
 ## Rust Primitives
