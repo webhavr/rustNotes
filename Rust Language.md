@@ -9,6 +9,7 @@
 - [Rust Primitives](#rust-primitives)
   - [Slice](#slice)
   - [str](#str)
+  - [String](#string)
   - [References](#references)
   - [Pointer](#pointer)
     - [Pointer Alignment in Rust](#pointer-alignment-in-rust)
@@ -41,7 +42,6 @@
 ## Pending
 * [ ] unsafe
 * [ ] Defined behavior for everything
-* [ ] Array Data Type
 * [ ] Vector Data Type
 
 ## Rust Benefits
@@ -79,6 +79,7 @@
 ### Slice
 * [Link](https://doc.rust-lang.org/std/primitive.slice.html)
 * A dynamically-sized view into a contiguous sequence, `[T]`
+* Since they are just a view, they don't own the data and borrow it from the sliced type.
 * Slices are a view into a block of memory represented as a pointer and a length.
 * Slices are either mutable or shared. 
   * The shared slice type is `&[T]`
@@ -90,6 +91,9 @@
 * ![String Slice](https://drive.google.com/uc?id=1tDhRkXwiMjMbueeu93_YXhsiiY5WgZgO)
 * A `&str` is made up of two components: a pointer to some bytes, and a length.
 
+### String
+* ![String](https://drive.google.com/uc?id=1MJp-FO8Jk9vG0m4xR-vsTcrDc2JfY4vz)
+  
 ### References
 * [Link](https://doc.rust-lang.org/std/primitive.reference.html)
 * [Rust Book Ref](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
@@ -179,7 +183,8 @@ Pointer alignment in Rust refers to the memory address where a value can be safe
 ### Panic
 * [Link](https://doc.rust-lang.org/std/macro.panic.html)
 * Panics the current thread.
-* This allows a program to terminate immediately and provide feedback to the caller of the program.
+* This allows a program to terminate immediately and provide feedback to the caller of the program
+* This is a run-time check
 
 ### Traits
 * [Link](https://doc.rust-lang.org/rust-by-example/trait.html)
