@@ -102,16 +102,16 @@
 Pointer alignment in Rust refers to the memory address where a value can be safely stored.
 
 * **Key Points**:
-* Alignment Requirement: Each data type has an associated alignment, specifying the address offsets at which it can be safely placed.   
-* Pointer Validity: A pointer is considered aligned if it points to a memory address that satisfies the alignment requirement of the pointed-to type.
-* Undefined Behavior: Accessing a value through a misaligned pointer results in undefined behavior, leading to crashes or unpredictable results.
-* Compiler Guarantees: Rust's compiler ensures that all pointers created through normal means are properly aligned.
+  * Alignment Requirement: Each data type has an associated alignment, specifying the address offsets at which it can be safely placed.   
+  * Pointer Validity: A pointer is considered aligned if it points to a memory address that satisfies the alignment requirement of the pointed-to type.
+  * Undefined Behavior: Accessing a value through a misaligned pointer results in undefined behavior, leading to crashes or unpredictable results.
+  * Compiler Guarantees: Rust's compiler ensures that all pointers created through normal means are properly aligned.
 
 
 * **Basic Types**:
-* u8: Can be placed at any address (alignment of 1).
-* u32: Must be placed at an address divisible by 4 (alignment of 4).
-* u64: Must be placed at an address divisible by 8 (alignment of 8).
+  * `u8`: Can be placed at any address (alignment of 1).
+  * `u32`: Must be placed at an address divisible by 4 (alignment of 4).
+  * `u64`: Must be placed at an address divisible by 8 (alignment of 8).
 * **Structs**:
     * The alignment of a struct is the maximum alignment of its fields.
 
