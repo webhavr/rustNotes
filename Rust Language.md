@@ -14,7 +14,6 @@
     - [Pointer Alignment in Rust](#pointer-alignment-in-rust)
   - [Tuple](#tuple)
   - [usize \& isize](#usize--isize)
-  - [array](#array)
   - [fn](#fn)
   - [unit](#unit)
 - [Language Basics](#language-basics)
@@ -141,9 +140,10 @@ Pointer alignment in Rust refers to the memory address where a value can be safe
 * For example:
   * On a `32 bit` target, this is `4 bytes`
   * On a `64 bit` target, this is `8 bytes`
-### array
+
 ### fn
 ### unit
+* ![Unit Primitive](https://drive.google.com/uc?id=19fdHDBwGRa5VcKRHEO1j5TFkoldSlqXv)
 
 ## Language Basics
 ### Crates
