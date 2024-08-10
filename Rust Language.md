@@ -97,6 +97,11 @@
 * We call the action of creating a reference borrowing. As in real life, if a person owns something, you can borrow it from them. When you’re done, you have to give it back. You don’t own it.
 
 ### Pointer
+* [Link](https://doc.rust-lang.org/std/ptr/index.html)
+* [Primitive](https://doc.rust-lang.org/std/primitive.pointer.html)
+* Raw pointers can be unaligned or null. 
+* When a raw pointer is dereferenced (using the * operator), it must be non-null and aligned
+* [Box](https://doc.rust-lang.org/std/boxed/struct.Box.html) is similar to a C++ unique pointer.
 
 #### Pointer Alignment in Rust
 Pointer alignment in Rust refers to the memory address where a value can be safely stored.
