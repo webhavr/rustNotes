@@ -142,6 +142,8 @@ Pointer alignment in Rust refers to the memory address where a value can be safe
   * On a `64 bit` target, this is `8 bytes`
 
 ### fn
+* [Link](https://doc.rust-lang.org/std/primitive.fn.html)
+ 
 ### unit
 * [Link](https://doc.rust-lang.org/std/primitive.unit.html)
 * ![Unit Primitive](https://drive.google.com/uc?id=19fdHDBwGRa5VcKRHEO1j5TFkoldSlqXv)
