@@ -92,7 +92,9 @@
 * A `&str` is made up of two components: a pointer to some bytes, and a length.
 
 ### String
+* [Link](https://doc.rust-lang.org/std/string/struct.String.html)
 * ![String](https://drive.google.com/uc?id=1MJp-FO8Jk9vG0m4xR-vsTcrDc2JfY4vz)
+* `String` has ownership over contents of string stored in a heap allocated buffer, while primitive `str` has borrowed it.
   
 ### References
 * [Link](https://doc.rust-lang.org/std/primitive.reference.html)
