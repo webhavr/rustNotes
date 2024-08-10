@@ -9,8 +9,9 @@
 - [Rust Primitives](#rust-primitives)
   - [Slice](#slice)
   - [str](#str)
-  - [Reference](#reference)
+  - [References](#references)
   - [Pointer](#pointer)
+    - [Pointer Alignment in Rust](#pointer-alignment-in-rust)
   - [Tuple](#tuple)
   - [usize](#usize)
   - [isize](#isize)
@@ -20,7 +21,6 @@
   - [Module](#module)
   - [Macros](#macros)
   - [Panic](#panic)
-  - [References](#references)
   - [Traits](#traits)
     - [Debug Trait](#debug-trait)
 
@@ -89,8 +89,38 @@
 * ![String Slice](https://drive.google.com/uc?id=1tDhRkXwiMjMbueeu93_YXhsiiY5WgZgO)
 * A `&str` is made up of two components: a pointer to some bytes, and a length.
 
-### Reference
+### References
+* [Link](https://doc.rust-lang.org/std/primitive.reference.html)
+* [Rust Book Ref](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+* A reference represents a borrow of some owned value. You can get one by using the `&` or `&mut` operators on a value, or by using a `ref` or `ref mut` pattern.
+* A reference is just a pointer that is assumed to be aligned, not null, and pointing to memory containing a valid value of `T`
+* We call the action of creating a reference borrowing. As in real life, if a person owns something, you can borrow it from them. When you’re done, you have to give it back. You don’t own it.
+
 ### Pointer
+
+#### Pointer Alignment in Rust
+Pointer alignment in Rust refers to the memory address where a value can be safely stored.
+
+* **Key Points**:
+* Alignment Requirement: Each data type has an associated alignment, specifying the address offsets at which it can be safely placed.   
+* Pointer Validity: A pointer is considered aligned if it points to a memory address that satisfies the alignment requirement of the pointed-to type.
+* Undefined Behavior: Accessing a value through a misaligned pointer results in undefined behavior, leading to crashes or unpredictable results.
+* Compiler Guarantees: Rust's compiler ensures that all pointers created through normal means are properly aligned.
+
+
+* **Basic Types**:
+* u8: Can be placed at any address (alignment of 1).
+* u32: Must be placed at an address divisible by 4 (alignment of 4).
+* u64: Must be placed at an address divisible by 8 (alignment of 8).
+* **Structs**:
+    * The alignment of a struct is the maximum alignment of its fields.
+
+* **Automatic Alignment**: The compiler automatically handles alignment for most cases, ensuring that data is placed at correct memory addresses.
+
+* **Why Alignment Matters**:
+  * **Performance**: Many hardware architectures have performance optimizations for aligned data access.
+  * **Correctness**: Incorrect alignment can lead to unexpected behavior or crashes.
+
 ### Tuple
 ### usize
 ### isize
@@ -127,13 +157,6 @@
 * [Link](https://doc.rust-lang.org/std/macro.panic.html)
 * Panics the current thread.
 * This allows a program to terminate immediately and provide feedback to the caller of the program.
-
-### References
-* [Link](https://doc.rust-lang.org/std/primitive.reference.html)
-* [Rust Book Ref](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
-* A reference represents a borrow of some owned value. You can get one by using the `&` or `&mut` operators on a value, or by using a `ref` or `ref mut` pattern.
-* A reference is just a pointer that is assumed to be aligned, not null, and pointing to memory containing a valid value of `T`
-* We call the action of creating a reference borrowing. As in real life, if a person owns something, you can borrow it from them. When you’re done, you have to give it back. You don’t own it.
 
 ### Traits
 * [Link](https://doc.rust-lang.org/rust-by-example/trait.html)
