@@ -13,8 +13,10 @@
   - [Pointer](#pointer)
     - [Pointer Alignment in Rust](#pointer-alignment-in-rust)
   - [Tuple](#tuple)
-  - [usize](#usize)
-  - [isize](#isize)
+  - [usize \& isize](#usize--isize)
+  - [array](#array)
+  - [fn](#fn)
+  - [unit](#unit)
 - [Language Basics](#language-basics)
   - [Crates](#crates)
   - [Item](#item)
@@ -133,8 +135,15 @@ Pointer alignment in Rust refers to the memory address where a value can be safe
 * Tuples are heterogeneous. This means that each element of the tuple can have a different type.
 * Tuples are a sequence. This means that they can be accessed by position; this is called ‘tuple indexing’
  
-### usize
-### isize
+### usize & isize
+* Pointer size for unsigned and signed integer types
+* The size of this primitive is how many bytes it takes to reference any location in memory.
+* For example:
+  * On a `32 bit` target, this is `4 bytes`
+  * On a `64 bit` target, this is `8 bytes`
+### array
+### fn
+### unit
 
 ## Language Basics
 ### Crates
