@@ -15,7 +15,6 @@
   * All Floating types
   * Char type
   * Typles only if they contain above types
-  
 * If we pass a variable to another function, it takes the ownership function of that variable. This is similar to C++ `std::move()`
 * If we want to transfer a variable without ownership, we need to use References
 * ![Reference Representation](https://drive.google.com/uc?id=1kzmbGbBA0W7ZKiMOGSdWkmaATM5H6CCz)
