@@ -3,9 +3,6 @@
 - [Links](#links)
 - [Pending](#pending)
 - [Rust Benefits](#rust-benefits)
-  - [Compile time memory safety](#compile-time-memory-safety)
-  - [No undefined runtime behavior](#no-undefined-runtime-behavior)
-  - [Modern language features](#modern-language-features)
 - [Rust Structs](#rust-structs)
 - [Rust Primitives](#rust-primitives)
   - [Slice](#slice)
@@ -47,7 +44,7 @@
 
 ## Rust Benefits
 
-### Compile time memory safety
+* **Compile time memory safety**
 * Whole classes of memory bugs are prevented at compile time
 * No uninitialized variables.
 * No double-frees.
@@ -57,12 +54,12 @@
 * No data races between threads.
 * No iterator invalidation.
 
-### No undefined runtime behavior
+* **No undefined runtime behavior**
 * What a Rust statement does is never left unspecified
 * Array access is bounds checked.
 * Integer overflow is defined (panic or wrap-around).
 
-### Modern language features
+* **Modern language features**
 * Enums and pattern matching.
 * Generics.
 * No overhead FFI.

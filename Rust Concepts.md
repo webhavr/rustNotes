@@ -1,3 +1,21 @@
+### Pending
+* [ ] Ch-3: Programming Concepts
+* [x] Ch-4: Ownership
+* [ ] Ch-5: Structs
+* [ ] Ch-6: Enums & Pattern Matching
+* [ ] Ch-7: Packages, Crates, Modules
+* [ ] Ch-8: Common Collections
+* [ ] Ch-9: Error Handling
+* [ ] Ch-10: Generics, Traits, Lifetimes
+* [ ] Ch-11: Tests
+* [ ] Ch-13: Iterators and Closures
+* [ ] Ch-14: Cargo & Crates
+* [ ] Ch-15: Smart Pointers
+* [ ] Ch-16: Concurrency
+* [ ] Ch-17: OOPS
+* [ ] Ch-18: Patterns and Matching
+* [ ] Ch-19: Advanced Features
+  
 ### Ownership
 * [Read Chapter - Ownership](https://drive.google.com/file/d/1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU/view)
 * Memory is managed through a system of ownership rules that compiler checks
