@@ -92,6 +92,7 @@
 
 ### Slice
 * [Link](https://doc.rust-lang.org/std/primitive.slice.html)
+* Slices is a reference to a part of the data. String slices are discussed in Ownership chapter
 * A dynamically-sized view into a contiguous sequence, `[T]`
 * Since they are just a view, they don't own the data and borrow it from the sliced type.
 * Slices are a view into a block of memory represented as a pointer and a length.
@@ -109,6 +110,8 @@
 * [Link](https://doc.rust-lang.org/std/string/struct.String.html)
 * ![String](https://drive.google.com/uc?id=1MJp-FO8Jk9vG0m4xR-vsTcrDc2JfY4vz)
 * `String` has ownership over contents of string stored in a heap allocated buffer, while primitive `str` has borrowed it.
+* String literals are immutable
+* `let s = String::from("hello")` - Here we are allocating memory on the heap owned by `s`. 
   
 ### References
 * [Link](https://doc.rust-lang.org/std/primitive.reference.html)
