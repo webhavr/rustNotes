@@ -36,6 +36,7 @@
 
 ### Memory Management Comparison
 * **Pros**
+ 
 | Manual like C       | Automatic Like Java | Scope based like C++ | Rust                 |
 | ------------------- | ------------------- | -------------------- | -------------------- |
 | No runtime overhead | Fully automatic     | Partially automatic  | Enforced by compiler |
@@ -43,6 +44,7 @@
 |                     |                     |                      | Safe & Correct       |
 
 * **Cons**
+ 
 | Manual like C  | Automatic Like Java | Scope based like C++          | Rust    |
 | -------------- | ------------------- | ----------------------------- | ------- |
 | Use after free | Garbage Collection  | Complex, opt-in by programmer | Complex |
