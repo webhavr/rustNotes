@@ -17,7 +17,7 @@
 * [ ] Ch-19: Advanced Features
   
 ### Ownership
-* [Read Chapter - Ownership](https://drive.google.com/file/d/1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU/view)
+* [Read Ch-4: - Ownership](https://drive.google.com/file/d/1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU/view)
 * Memory is managed through a system of ownership rules that compiler checks
 * Program won't compile if rules violated
 * **Ownership Rules**
@@ -69,3 +69,5 @@
 | Double free    | Destructor delays   | Potential for use-after free  |         |
 | Memory leaks   |                     |                               |         |
 
+### Generics
+*  [Read Ch-10: - G T Lifetime](https://drive.google.com/file/d/1FJ6g33pGUuDInt2b3fqjWDRCKwGpteYR/view) 
