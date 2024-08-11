@@ -1,5 +1,5 @@
 ### Ownership
-* ![Read Chapter - Ownership](https://drive.google.com/uc?id=1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU)
+* [Read Chapter - Ownership](https://drive.google.com/uc?id=1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU)
 * Memory is managed through a system of ownership rules that compiler checks
 * Program won't compile if rules violated
 * Ownership Rules
