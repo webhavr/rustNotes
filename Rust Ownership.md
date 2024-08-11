@@ -30,8 +30,7 @@
   * Two or more pointers access the same data at the same time.
   * At least one of the pointers is being used to write to the data.
   * There’s no mechanism being used to synchronize access to the data.
-
-* Benefits of Restriction
+* **Benefits of Restriction**
   * Data Races can be prevented at compile time
 * Scope of a reference is from the time it is created until it is last used
 * References cannot be dangling and must always be valid
