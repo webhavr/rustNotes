@@ -25,7 +25,6 @@
 * For any variable, we can have
   * Only 1 mutable reference. No other reference - either mutable or immutable now
   * Multiple immutable references
-  
 * **Data Race**
   * Two or more pointers access the same data at the same time.
   * At least one of the pointers is being used to write to the data.
