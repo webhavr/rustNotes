@@ -90,3 +90,12 @@
 *  Rust has a Borrow Checker that compares scopes to determine whether all borrows are valid
 *  `Static` lifetime denotes the associated reference can live for the entire duration of the program
 *  All string literals have a static lifetime
+
+### Vectors
+*  [Read Ch-8: - Collections](https://drive.google.com/file/d/1TRfVi795ALHgfyvjDjuA7xgU7Ye3KB34/view)
+
+### Strings
+*  [Read Ch-8: - Collections](https://drive.google.com/file/d/1TRfVi795ALHgfyvjDjuA7xgU7Ye3KB34/view)
+
+### Hash Maps
+*  [Read Ch-8: - Collections](https://drive.google.com/file/d/1TRfVi795ALHgfyvjDjuA7xgU7Ye3KB34/view)
