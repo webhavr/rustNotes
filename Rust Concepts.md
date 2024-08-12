@@ -6,7 +6,7 @@
 * [ ] Ch-7: Packages, Crates, Modules
 * [ ] Ch-8: Common Collections
 * [ ] Ch-9: Error Handling
-* [ ] Ch-10: Generics, Traits, Lifetimes
+* [x] Ch-10: Generics, Traits, Lifetimes
 * [ ] Ch-11: Tests
 * [ ] Ch-13: Iterators and Closures
 * [ ] Ch-14: Cargo & Crates
