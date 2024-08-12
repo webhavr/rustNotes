@@ -70,4 +70,23 @@
 | Memory leaks   |                     |                               |         |
 
 ### Generics
-*  [Read Ch-10: - G T Lifetime](https://drive.google.com/file/d/1FJ6g33pGUuDInt2b3fqjWDRCKwGpteYR/view) 
+*  [Read Ch-10: - G T Lifetime](https://drive.google.com/file/d/1FJ6g33pGUuDInt2b3fqjWDRCKwGpteYR/view)
+*  Allow us to replace specific types with placeholder that represents multiple types to avoid code duplication
+*  Using generics is a compile-time cost rather than a run-time cost.
+*  Monomorphization is the process of turning generic code into specific code by filing in concrete types that are used when compiled
+
+### Traits
+*  [Read Ch-10: - G T Lifetime](https://drive.google.com/file/d/1FJ6g33pGUuDInt2b3fqjWDRCKwGpteYR/view)
+*  Traits are similar to a feature called interfaces in other languages, with some differences
+*  Trait can be thought of as a virtual class with virtual methods. If any class wants to implement a trait, it needs to implement the virtual methods required under the virtual class
+*  We could also use default implementations for a trait
+*  We can only implement a trait on a type only if either the trait or the type, or both are local to the crate.
+
+### Lifetimes
+*  [Read Ch-10: - G T Lifetime](https://drive.google.com/file/d/1FJ6g33pGUuDInt2b3fqjWDRCKwGpteYR/view)
+*  Lifetime ensures that references are valid as long as we need them to be.
+*  Every reference in Rust has a lifetime, which is the scope for which the reference is valid
+*  We must annotate the lifetimes when lifetimes of references could be related in a few different ways
+*  Rust has a Borrow Checker that compares scopes to determine whether all borrows are valid
+*  `Static` lifetime denotes the associated reference can live for the entire duration of the program
+*  All string literals have a static lifetime
