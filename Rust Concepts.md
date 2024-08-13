@@ -4,7 +4,7 @@
 * [ ] Ch-5: Structs
 * [ ] Ch-6: Enums & Pattern Matching
 * [ ] Ch-7: Packages, Crates, Modules
-* [ ] Ch-8: Common Collections
+* [x] Ch-8: Common Collections
 * [ ] Ch-9: Error Handling
 * [x] Ch-10: Generics, Traits, Lifetimes
 * [ ] Ch-11: Tests
@@ -115,3 +115,6 @@
 
 ### Hash Maps
 *  [Read Ch-8: - Collections](https://drive.google.com/file/d/1TRfVi795ALHgfyvjDjuA7xgU7Ye3KB34/view)
+*  In hash maps, ownership is decided by if the data type implements the Copy trait or not
+*  For `i32` which implement the `Copy` trait, the values are copied into the hash map
+*  For owned values like `String`, the values will be moved into the hash map, which will become the owner of those values
