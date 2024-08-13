@@ -93,9 +93,25 @@
 
 ### Vectors
 *  [Read Ch-8: - Collections](https://drive.google.com/file/d/1TRfVi795ALHgfyvjDjuA7xgU7Ye3KB34/view)
+* For vectors, strings, and hash maps, data is stored on the heap
+* A vector allows to store a variable number of values next to each other
+* Can only store values of the same type
+* Can be created using the `vec!` macro or `Vec::new()` function
+* We can get the value at an index using `&` or `[]`
+* We can also use the `get` method with index as an argument. It returns `Option<T>`
+* If we use vector in combination with Enum, we can use the vector to store multiple types
+* At any time, if the vector's reference is used, the borrow checker would ensure the lifetime of the reference and the borrow checker rules 
+  
 
 ### Strings
 *  [Read Ch-8: - Collections](https://drive.google.com/file/d/1TRfVi795ALHgfyvjDjuA7xgU7Ye3KB34/view)
+* String literals are stored in program's binary or Stack
+* String type is growable, and stored on the heap
+* V IMP - Rust Strings do not support indexing
+* If we want to iterate over strings:
+  * We could use the `chars()` method -> For unicode scalar values
+  * Or, we could use the `bytes()` method -> For raw bytes
+  * Unicode scalar values may be made up of more than 1 byte
 
 ### Hash Maps
 *  [Read Ch-8: - Collections](https://drive.google.com/file/d/1TRfVi795ALHgfyvjDjuA7xgU7Ye3KB34/view)
