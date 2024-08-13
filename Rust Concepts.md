@@ -118,3 +118,9 @@
 *  In hash maps, ownership is decided by if the data type implements the Copy trait or not
 *  For `i32` which implement the `Copy` trait, the values are copied into the hash map
 *  For owned values like `String`, the values will be moved into the hash map, which will become the owner of those values
+
+### Enums
+* [Read Ch-6: - Enum Patterns](https://drive.google.com/file/d/1MPidpIiuC5oYjitT9yJgHTSJo0pkWcDT/view)
+   
+### Match
+* [Read Ch-6: - Enum Patterns](https://drive.google.com/file/d/1MPidpIiuC5oYjitT9yJgHTSJo0pkWcDT/view)
