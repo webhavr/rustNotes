@@ -214,3 +214,23 @@ Pointer alignment in Rust refers to the memory address where a value can be safe
 * [Link](https://doc.rust-lang.org/std/fmt/trait.Debug.html)
 * This is a standard library trait used for formatting values in a human-readable way, primarily for debugging purposes.
 * It allows you to print the contents of a value to the console using the `{:?}` format specifier with `println!`.
+* We can also use `{:#?}` to print every field in a new line
+* For this, we need to use the `#[derive(Debug)]` at the top of the code
+* We could also use the `dbg!` macro, which takes the ownership of an expression, as opposed to `println!`, which just takes a reference
+* Example
+    ```
+    #[derive(Debug)]
+    struct Rectangle {
+      width: u32,
+      height: u32,
+    }
+    fn main() {
+      let scale = 2;
+      let rect1 = Rectangle {
+        width: dbg!(30 * scale),
+        height: 50,
+      };
+      dbg!(&rect1);
+    }
+    ```
+* The `dbg` macro can be very helpful if we need to figure out what the code is doing
