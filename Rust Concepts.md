@@ -14,20 +14,20 @@
 ### Pending
 * [ ] Ch-3: Programming Concepts
 * [x] Ch-4: Ownership
-* [ ] Ch-5: Structs
+* [ ] Ch-5: Structs - 24
 * [x] Ch-6: Enums & Pattern Matching
-* [ ] Ch-7: Packages, Crates, Modules
+* [ ] Ch-7: Packages, Crates, Modules - 28
 * [x] Ch-8: Common Collections
-* [ ] Ch-9: Error Handling
+* [ ] Ch-9: Error Handling - 24
 * [x] Ch-10: Generics, Traits, Lifetimes
-* [ ] Ch-11: Tests
-* [ ] Ch-13: Iterators and Closures
-* [ ] Ch-14: Cargo & Crates
-* [ ] Ch-15: Smart Pointers
-* [ ] Ch-16: Concurrency
-* [ ] Ch-17: OOPS
-* [ ] Ch-18: Patterns and Matching
-* [ ] Ch-19: Advanced Features
+* [ ] Ch-11: Tests - 39
+* [ ] Ch-13: Iterators and Closures - 30
+* [ ] Ch-14: Cargo & Crates - 25
+* [ ] Ch-15: Smart Pointers - 49
+* [ ] Ch-16: Concurrency - 29
+* [ ] Ch-17: OOPS - 27
+* [ ] Ch-18: Patterns and Matching - 27
+* [ ] Ch-19: Advanced Features - 50
   
 ### Ownership
 * [Read Ch-4: - Ownership](https://drive.google.com/file/d/1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU/view)
