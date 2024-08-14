@@ -1,3 +1,16 @@
+- [Pending](#pending)
+- [Ownership](#ownership)
+- [Borrowing](#borrowing)
+- [Memory Management Comparison](#memory-management-comparison)
+- [Generics](#generics)
+- [Traits](#traits)
+- [Lifetimes](#lifetimes)
+- [Vectors](#vectors)
+- [Strings](#strings)
+- [Hash Maps](#hash-maps)
+- [Enums](#enums)
+- [Match](#match)
+
 ### Pending
 * [ ] Ch-3: Programming Concepts
 * [x] Ch-4: Ownership
