@@ -2,7 +2,7 @@
 * [ ] Ch-3: Programming Concepts
 * [x] Ch-4: Ownership
 * [ ] Ch-5: Structs
-* [ ] Ch-6: Enums & Pattern Matching
+* [x] Ch-6: Enums & Pattern Matching
 * [ ] Ch-7: Packages, Crates, Modules
 * [x] Ch-8: Common Collections
 * [ ] Ch-9: Error Handling
@@ -127,8 +127,8 @@
 * Example
     ```
     num IpAddr {
-    V4(u8, u8, u8, u8),
-    V6(String),
+      V4(u8, u8, u8, u8),
+      V6(String),
     }
     ```
 * We can also define methods on `enums` like structs using the `impl` keyword
