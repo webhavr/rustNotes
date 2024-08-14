@@ -121,6 +121,32 @@
 
 ### Enums
 * [Read Ch-6: - Enum Patterns](https://drive.google.com/file/d/1MPidpIiuC5oYjitT9yJgHTSJo0pkWcDT/view)
+* Allow to define a type by enumerating its possible variations
+* `Option` is an enum that can be `Some(*)` or `None`
+* Enums and struct can be combined in Rust
+* Example
+    ```
+    num IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+    }
+    ```
+* We can also define methods on `enums` like structs using the `impl` keyword
+* Option Enum
+    ```
+    enum Option<T> {
+      None,
+      Some(T),
+    }
+    ```
+* Before using, if we want to use `4i32`, we need to convert it from `Some(4i32)` explicitly
    
 ### Match
 * [Read Ch-6: - Enum Patterns](https://drive.google.com/file/d/1MPidpIiuC5oYjitT9yJgHTSJo0pkWcDT/view)
+* Similar to switch but with enhanced capabilities
+* Separated by the `=>` arm
+* Match and Enums are combined a lot in Rust
+* Matches are exhaustive - i.e. the arms must cover all the possibilities
+* If any possible case is left out in match, Rust code will not compile
+* We could use `other` for left out cases, but `other` is binding
+* We could also use `_`, which is non-binding
