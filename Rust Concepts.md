@@ -14,7 +14,6 @@
 - [Methods](#methods)
 
 ### Pending
-* [ ] Ch-3: Programming Concepts
 * [x] Ch-4: Ownership
 * [x] Ch-5: Structs
 * [x] Ch-6: Enums & Pattern Matching
