@@ -16,7 +16,7 @@
 ### Pending
 * [ ] Ch-3: Programming Concepts
 * [x] Ch-4: Ownership
-* [ ] Ch-5: Structs - 24
+* [x] Ch-5: Structs - 24
 * [x] Ch-6: Enums & Pattern Matching
 * [ ] Ch-7: Packages, Crates, Modules - 28
 * [x] Ch-8: Common Collections
