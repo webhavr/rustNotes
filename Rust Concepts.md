@@ -167,7 +167,7 @@
 * We could also use `_`, which is non-binding
 
 ### Structs
-* [Read Ch-5: - Structs](https://drive.google.com/file/d/15HWha7dNxTZtl1ywXNsJWrbjsdK_zXd/view)
+* [Read Ch-5: - Structs](https://drive.google.com/file/d/15HWha7dNxTZtl1ywXNsJWrbjsdK_zXdo/view)
 * Structs help to hold multiple related values together
 * Fields are names of types in structs
 * If we want to change a struct, the entire instance must be mutable. Rust doesn't allow to mark only certain fields as mutable
@@ -176,7 +176,7 @@
 * Structs can also carry references to data owned by something else, but to do so requires the use of explicitly specifying reference lifetimes
 
 ### Methods
-*  [Read Ch-5: - Structs](https://drive.google.com/file/d/15HWha7dNxTZtl1ywXNsJWrbjsdK_zXd/view)
+*  [Read Ch-5: - Structs](https://drive.google.com/file/d/15HWha7dNxTZtl1ywXNsJWrbjsdK_zXdo/view)
 *  Methods are similar to functions and defined with the `fn` keyword
 *  They are defined within the context of a struct or an enum using an `impl` keyword
 *  Example - an area method inside the Rectangle struct
