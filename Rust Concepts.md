@@ -12,6 +12,9 @@
 - [Match](#match)
 - [Structs](#structs)
 - [Methods](#methods)
+- [Packages](#packages)
+- [Crates](#crates)
+- [Modules](#modules)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -182,3 +185,16 @@
 *  Within an `impl` block, the type Self is an alias for the type that the `impl` block is for
 *  Methods must have a parameter named `self` of type `Self` for their first parameter
 *  Depending on the type of borrow, this could be prefixed with simply `&` or `&mut`
+  
+### Packages
+* [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
+* abc
+
+
+### Crates
+* [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
+* abc
+
+### Modules
+* [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
+* abc
