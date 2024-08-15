@@ -16,6 +16,7 @@
 - [Crates](#crates)
 - [Modules](#modules)
 - [Use](#use)
+- [Errors](#errors)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -235,3 +236,7 @@
 * [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
 * Adding `use` and a path in a scope is similar to creating a symbolic link in the filesystem
 * Paths brought into scope with `use` also check for privacy of modules
+
+### Errors
+* [Read Ch-9: Errors](https://drive.google.com/file/d/1jwHZr5HfQfiwfjrfptblDtWWkBTEs9QZ/view)
+*  

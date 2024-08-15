@@ -40,7 +40,10 @@
 ## Pending
 * [ ] unsafe
 * [ ] Defined behavior for everything
-* [ ] Vector Data Type
+* [ ] unwrap or else
+* [ ] unwrap
+* [ ] expect
+* [ ] ? operator
 
 ## Rust Benefits
 
