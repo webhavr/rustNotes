@@ -15,12 +15,13 @@
 - [Packages](#packages)
 - [Crates](#crates)
 - [Modules](#modules)
+- [Use](#use)
 
 ### Pending
 * [x] Ch-4: Ownership
 * [x] Ch-5: Structs
 * [x] Ch-6: Enums & Pattern Matching
-* [ ] Ch-7: Packages, Crates, Modules - 28
+* [x] Ch-7: Packages, Crates, Modules
 * [x] Ch-8: Common Collections
 * [ ] Ch-9: Error Handling - 24
 * [x] Ch-10: Generics, Traits, Lifetimes
@@ -157,6 +158,7 @@
     }
     ```
 * Before using, if we want to use `4i32`, we need to convert it from `Some(4i32)` explicitly
+* If we use the `pub` keyword before an enum, all the fields of enum become public by default
    
 ### Match
 * [Read Ch-6: - Enum Patterns](https://drive.google.com/file/d/1MPidpIiuC5oYjitT9yJgHTSJo0pkWcDT/view)
@@ -176,6 +178,8 @@
 * We can create struct instances from other instances using Struct Update Syntax. This way, we can create a new instance which differs in say only 1-2 fields
 * We can also create Tuple Structs like - `struct Color(i32, i32, i32)`
 * Structs can also carry references to data owned by something else, but to do so requires the use of explicitly specifying reference lifetimes
+* If we use `pub` keyword before Struct, only the Struct is public
+* All of the fields inside Struct need to be explicitly made `pub` one by one
 
 ### Methods
 *  [Read Ch-5: - Structs](https://drive.google.com/file/d/15HWha7dNxTZtl1ywXNsJWrbjsdK_zXdo/view)
@@ -191,9 +195,10 @@
 * A Cargo feature that allows to build, test, and share crates
 * A bundle of one or more crates that provides a set of functionality
 * Package contains a `Cargo.toml` file that describes how to build those crates
-* A package must contain at least 1 crate - either binary crate or library crate
-* 
-
+* A package must contain at least 1 crate - either binary crate or library crate 
+* Packages added in `Cargo.toml` tell Cargo to download the specific package and its dependencies from `crates.io` and make it available to the project
+* To use any external package into our current package, we need to use the `use` keyword
+* Package -> Crates -> Modules
 
 ### Crates
 * [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
@@ -219,6 +224,14 @@
 * `use` keyword brings a path into scope
 * `pub` keyword is used to make things public
 * `mod` keyword is used to decalre modules
-* Code within a module is private from its parent modules by default
+* `super` keyword helps to access relative paths in the ancestor modules
+* All items within a module is private from its parent modules by default
 * To make a module public, we need to use `pub mod`
-* A module can contain actual functions with the `fn` keyword 
+* A module can contain actual functions with the `fn` keyword
+* Items in a parent module can't use the private items inside child modules, but items in a child module can use the items in their ancestor modules.
+
+
+### Use
+* [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
+* Adding `use` and a path in a scope is similar to creating a symbolic link in the filesystem
+* Paths brought into scope with `use` also check for privacy of modules
