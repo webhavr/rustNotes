@@ -188,13 +188,37 @@
   
 ### Packages
 * [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
-* abc
+* A Cargo feature that allows to build, test, and share crates
+* A bundle of one or more crates that provides a set of functionality
+* Package contains a `Cargo.toml` file that describes how to build those crates
+* A package must contain at least 1 crate - either binary crate or library crate
+* 
 
 
 ### Crates
 * [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
-* abc
+* A Tree of modules that produces a library or executable
+* The smallest amount of code that the rust compiler considers at a time
+* **Library Crate**
+  * Don't have a `main` function
+  * They don't compile to an executable
+  * A package can contain at most 1 library crate
+* **Binary Crate**
+  * A package may contain as many binary traits as possible
+  * Must have a `main` function
+  * These can be compiled to an executable that can be run
+* **Crate Compilation**
+  * Crate Root is a source file that the Rust compiler starts from and makes up the root module of the crate
+  * When compiling a crate, the compiler first looks in the crate root file
+    * `src/lib.rs` for a library crate
+    * `src/main.rs` for a binary crate
 
 ### Modules
 * [Read Ch-7: Packages Crates Modules](https://drive.google.com/file/d/10XSj62Q5d9Z8H8-j3EFyTcI6Zebwy0BU/view)
-* abc
+* Help to control the organization, scope, and privacy of paths
+* `use` keyword brings a path into scope
+* `pub` keyword is used to make things public
+* `mod` keyword is used to decalre modules
+* Code within a module is private from its parent modules by default
+* To make a module public, we need to use `pub mod`
+* A module can contain actual functions with the `fn` keyword 
