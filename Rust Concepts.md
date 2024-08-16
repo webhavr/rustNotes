@@ -265,16 +265,17 @@
     * To enable, `panic = 'abort'` could be added to the profile section in `Cargo.toml` file
 
 ### Recoverable Errors
+* [Read Ch-9: Errors](https://drive.google.com/file/d/1jwHZr5HfQfiwfjrfptblDtWWkBTEs9QZ/view)
 * Result Enum
-  * ```
-    enum Result<T, E> {
-      Ok(T),
-      Err(E),
-    }
-    ``` 
+  ```
+  enum Result<T, E> {
+    Ok(T),
+    Err(E),
+  }
+  ``` 
 * We could use the `match` with `Result` enums to combine variety of errors
 * Alternatives or Combinations - `unwrap_or_else`, `unwrap`, `expect`
-* Errors can also be propagated using using the `?` operator
+* Errors can also be propagated using using the `?` operator, so the calling code can decide what to do with them
 
 ### Error handling guidelines
 * It's advisable to get code panic when it's possible that code could end up in a bad state
