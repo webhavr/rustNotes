@@ -5,6 +5,8 @@
   - [`static`](#static)
   - [`type`](#type)
   - [`self`](#self)
+  - [Unwrap Methods](#unwrap-methods)
+  - [Expect](#expect)
 
 ## Keywords
 | Keyword      | Link                                                      |
@@ -62,4 +64,17 @@
 * `self` is used in two situations:
   1. referencing the current module
   2. marking the receiver of a method.
+
+### Unwrap Methods
+* [Link](https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap)
+
+### Expect
+* [Link](https://doc.rust-lang.org/std/option/enum.Option.html#method.expect)
+* Returns the contained Some value, consuming the self value.
+* Panics if the value is a None with a custom panic message provided by msg.
+* ```
+  let x: Option<&str> = None;
+  x.expect("fruits are healthy"); // panics with `fruits are healthy`
+  ```
+
 
