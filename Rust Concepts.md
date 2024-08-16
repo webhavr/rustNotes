@@ -27,7 +27,7 @@
 * [x] Ch-6: Enums & Pattern Matching
 * [x] Ch-7: Packages, Crates, Modules
 * [x] Ch-8: Common Collections
-* [ ] Ch-9: Error Handling - 24 - Fri
+* [x] Ch-9: Error Handling
 * [x] Ch-10: Generics, Traits, Lifetimes
 * [ ] Ch-11: Tests - 39 - Fri
 * [ ] Ch-13: Iterators and Closures - 30 - Sat
