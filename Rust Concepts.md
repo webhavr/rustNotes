@@ -17,6 +17,9 @@
 - [Modules](#modules)
 - [Use](#use)
 - [Errors](#errors)
+- [Panic](#panic)
+- [Recoverable Errors](#recoverable-errors)
+- [Error handling guidelines](#error-handling-guidelines)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -24,16 +27,16 @@
 * [x] Ch-6: Enums & Pattern Matching
 * [x] Ch-7: Packages, Crates, Modules
 * [x] Ch-8: Common Collections
-* [ ] Ch-9: Error Handling - 24
+* [ ] Ch-9: Error Handling - 24 - Fri
 * [x] Ch-10: Generics, Traits, Lifetimes
-* [ ] Ch-11: Tests - 39
-* [ ] Ch-13: Iterators and Closures - 30
-* [ ] Ch-14: Cargo & Crates - 25
-* [ ] Ch-15: Smart Pointers - 49
-* [ ] Ch-16: Concurrency - 29
-* [ ] Ch-17: OOPS - 27
-* [ ] Ch-18: Patterns and Matching - 27
-* [ ] Ch-19: Advanced Features - 50
+* [ ] Ch-11: Tests - 39 - Fri
+* [ ] Ch-13: Iterators and Closures - 30 - Sat
+* [ ] Ch-14: Cargo & Crates - 25 - Sat
+* [ ] Ch-15: Smart Pointers - 49 - Sat
+* [ ] Ch-16: Concurrency - 29 - Sun
+* [ ] Ch-17: OOPS - 27 - Sun
+* [ ] Ch-18: Patterns and Matching - 27 - Sun
+* [ ] Ch-19: Advanced Features - 50 - Mon
   
 ### Ownership
 * [Read Ch-4: - Ownership](https://drive.google.com/file/d/1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU/view)
@@ -239,4 +242,48 @@
 
 ### Errors
 * [Read Ch-9: Errors](https://drive.google.com/file/d/1jwHZr5HfQfiwfjrfptblDtWWkBTEs9QZ/view)
-*  
+* 2 types of errors
+  * **Recoverable Errors**
+  * **Unrecoverable Errors**
+    * These are dealt with `panic`
+    * Panic could be implicit - like calling an array out of bounds index
+    * Explicitly calling the panic command
+
+### Panic
+* [Read Ch-9: Errors](https://drive.google.com/file/d/1jwHZr5HfQfiwfjrfptblDtWWkBTEs9QZ/view)
+* Unrecoverable errors are dealt with `panic`
+* Panic could be implicit - like calling an array out of bounds index
+* Explicitly calling the panic command
+* **Panic Response**
+  * **Unwinding**
+    * Rust walks back up the stack and cleans data from each function it encounters
+    * Run rust code with `RUST_BACKTRACE=1`
+    * We can also enable debug symbols in Rust
+  * **Aborting**
+    * Immediately aborting
+    * Memory that the program was using will then need to be cleaned up by the operating system
+    * To enable, `panic = 'abort'` could be added to the profile section in `Cargo.toml` file
+
+### Recoverable Errors
+* Result Enum
+  * ```
+    enum Result<T, E> {
+      Ok(T),
+      Err(E),
+    }
+    ``` 
+* We could use the `match` with `Result` enums to combine variety of errors
+* Alternatives or Combinations - `unwrap_or_else`, `unwrap`, `expect`
+* Errors can also be propagated using using the `?` operator
+
+### Error handling guidelines
+* It's advisable to get code panic when it's possible that code could end up in a bad state
+* A bad state is when some assumption, guarantee, contract, or invariant
+has been broken, such as when invalid values, contradictory values, or missing values are passed to your code—plus one or more of the following:
+  * The bad state is something that is unexpected, as opposed to something that will likely happen occasionally, like a user entering data in the wrong format.
+  * Your code after this point needs to rely on not being in this bad state, rather than checking for the problem at every step.
+* If someone calls your code and passes in values that don’t make sense, it’s best to return an
+error if you can so the user of the library can decide what they want to do in that case.
+* However, in cases where continuing could be insecure or harmful, the best choice might be to call panic! and alert the person using your library to the bug in their code so they can fix it during development.
+* However, when failure is expected, it’s more appropriate to return a Result than to make a panic! call.
+* When your code performs an operation that could put a user at risk if it’s called using invalid values, your code should verify the values are valid first and panic if the values aren’t valid.
