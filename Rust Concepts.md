@@ -366,8 +366,7 @@ error if you can so the user of the library can decide what they want to do in t
     * Here, we cannot even call the closure more than once, as it cannot capture mutably a reference more than once
   * **Taking Ownership**
     * While working with threads and closures, we would want to move the ownership of the variable to the closure itself
-    * We can do this by explicitly mentioning `move` before the closure `thread::spawn(move || println!("From thread: {list:?}"))`
-
+    * We can do this by explicitly mentioning `move` before the closure `thread::spawn(move || println!("From thread: {list:?}"))`=
 * **Moving captured values out of the closure**
   * A closure body can do any of the following
     * Move a captured body out of the closure
