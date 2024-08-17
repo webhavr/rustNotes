@@ -23,6 +23,7 @@
 - [Tests](#tests)
 - [Test Run Control](#test-run-control)
 - [Test Organization](#test-organization)
+- [Closures](#closures)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -334,3 +335,42 @@ error if you can so the user of the library can decide what they want to do in t
     * Each file in the `tests` directory is a separate crate, so we need to bring our library into each test crates' scope 
     * We don't annotate integration tests with `#[cfg(test)]`. They run automatically when we invoke `cargo --test`
 * If any test in a section fails, the following sections will not run
+
+### Closures
+*  [Read Ch-13: Tests](https://drive.google.com/file/d/19DzJZpzyLzEm59r0t8hzbLF1wtm5Jltu/view)
+*  A function like construct that can be stored in a variable
+*  Rust Closures are anonymous functions you can save in a variable or pass as arguments to other functions
+*  Closure can be created in one context and called in a totally different context
+*  Closures can capture values from the scope in which they are defined
+*  Differences between Closures and Functions
+   *  Closures can capture their environment where they are defined. This cannot be done by functions
+* **Syntax:**
+  *  ```
+      fn add_one_v1 (x: u32) -> u32 { x + 1 } // Normal Function
+      let add_one_v2 = |x: u32| -> u32 { x + 1 }; // Closure
+      let add_one_v3 = |x| { x + 1 }; // Closure does not need to know variable type
+      let add_one_v4 = |x| x + 1 ; // Closure does not even need curly braces
+      ```
+  *   Compiler can infer and then will record only type of parameters for their types
+      ```
+      add_one_v3(4i32);
+      add_one_v3(4u32); // Will give compiler error now
+      ```
+* **Closure capturing values from environment**
+  * **Borrowing Immutably**
+    * As with functions, we can call closure multiple times with captured varibales from environment
+    * Because we can have multiple immutable references to a variable
+  * **Borrowing Mutably**
+    * If a closure is capturing a variable in the environment mutably
+    * Then, there cannot be any other reference to that variable
+    * Here, we cannot even call the closure more than once, as it cannot capture mutably a reference more than once
+  * **Taking Ownership**
+    * While working with threads and closures, we would want to move the ownership of the variable to the closure itself
+    * We can do this by explicitly mentioning `move` before the closure `thread::spawn(move || println!("From thread: {list:?}"))`
+
+* **Moving captured values out of the closure**
+  * A closure body can do any of the following
+    * Move a captured body out of the closure
+    * Mutate the captured value
+    * Neither move, nor mutate the value
+    * Capture nothing from the environment to begin with 

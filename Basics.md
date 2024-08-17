@@ -5,6 +5,7 @@
 - [Imperative \& Functional Language](#imperative--functional-language)
 - [Type Safety](#type-safety)
 - [Metaprogramming](#metaprogramming)
+- [Functional Programming](#functional-programming)
 
 ### Pending
 * [ ] Double Free
@@ -97,3 +98,21 @@
     * **Templates:** Parametric polymorphism in languages like C++ for code generation based on types.
     * Reflection: The ability of a program to inspect its own structure at runtime (e.g., Java, Python).
     * Code Generation: Creating new code based on specific requirements or patterns.   
+
+### Functional Programming
+* Functional programming is a programming paradigm that emphasizes the evaluation of expressions rather than statements. 
+* It treats computation as the evaluation of mathematical functions and avoids changing state and mutable data.
+
+* **Characteristics:**
+  *   **Pure functions:** Functions that always produce the same output for the same input and have no side effects.
+  *   **Immutability:** Data is treated as immutable, meaning it cannot be changed after it's created.
+  *   **Higher-order functions:** Functions that can take other functions as arguments or return functions as results.
+  *   **Recursion:** Functions that call themselves to solve problems, often used to replace loops.
+  *   **Lazy evaluation:** Expressions are evaluated only when their results are needed.
+
+
+* **Benefits:**
+  *   Improved code readability and maintainability: Functional code is often easier to understand and modify due to its declarative nature.
+  *   **Reduced bugs:** The lack of mutable state and side effects can help prevent common programming errors.
+  *   **Parallelism:** Functional programs can be more easily parallelized, as pure functions can be executed independently.
+  *   **Better testing:** Functional tests can be simpler to write and maintain due to the deterministic nature of pure functions.
