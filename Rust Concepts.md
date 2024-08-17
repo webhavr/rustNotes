@@ -20,6 +20,7 @@
 - [Panic](#panic)
 - [Recoverable Errors](#recoverable-errors)
 - [Error handling guidelines](#error-handling-guidelines)
+- [Tests](#tests)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -288,3 +289,6 @@ error if you can so the user of the library can decide what they want to do in t
 * However, in cases where continuing could be insecure or harmful, the best choice might be to call panic! and alert the person using your library to the bug in their code so they can fix it during development.
 * However, when failure is expected, it’s more appropriate to return a Result than to make a panic! call.
 * When your code performs an operation that could put a user at risk if it’s called using invalid values, your code should verify the values are valid first and panic if the values aren’t valid.
+
+### Tests
+* [Read Ch11: Tests](https://drive.google.com/file/d/1vx_dHJUt00o1J1S901uCFIO431WD8JhG/view)
