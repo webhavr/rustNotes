@@ -21,6 +21,8 @@
 - [Recoverable Errors](#recoverable-errors)
 - [Error handling guidelines](#error-handling-guidelines)
 - [Tests](#tests)
+- [Test Run Control](#test-run-control)
+- [Test Organization](#test-organization)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -30,7 +32,7 @@
 * [x] Ch-8: Common Collections
 * [x] Ch-9: Error Handling
 * [x] Ch-10: Generics, Traits, Lifetimes
-* [ ] Ch-11: Tests - 39 - Fri
+* [x] Ch-11: Tests 
 * [ ] Ch-13: Iterators and Closures - 30 - Sat
 * [ ] Ch-14: Cargo & Crates - 25 - Sat
 * [ ] Ch-15: Smart Pointers - 49 - Sat
@@ -291,4 +293,44 @@ error if you can so the user of the library can decide what they want to do in t
 * When your code performs an operation that could put a user at risk if it’s called using invalid values, your code should verify the values are valid first and panic if the values aren’t valid.
 
 ### Tests
-* [Read Ch11: Tests](https://drive.google.com/file/d/1vx_dHJUt00o1J1S901uCFIO431WD8JhG/view)
+* [Read Ch-11: Tests](https://drive.google.com/file/d/1vx_dHJUt00o1J1S901uCFIO431WD8JhG/view)
+* Tests are best written in 3 sections
+  * Set Up
+  * Run the code to test
+  * Assert the results
+* Rust annotates test by adding the `#[test]` before the fn body of the test
+* When tests are run with `cargo test`, Rust builds a test runner binary that runs the annotated functions and reports on whether each test function passes or fails
+* Each test by default runs in its own thread. When the main thread sees that a test thread has died, the test is marked as failed
+* **Assert Macros**
+  * `assert!` - Evaluate if a statement is true or false
+  * `assert_eq` - Evaluate if 2 arguments are equal
+  * `assert_ne` - Evaluate if 2 arguments are not equal
+  * Optionally, with macro, we can add a custome message to be printed in case of failure
+* `should_panic`
+  * The test passes if the code inside the function panics
+  * The test fails if the code inside the function does not panic
+  * `#[should_panic]` attribute is placed after the `#[test]` attribute
+  * `should_panic` can also be combined with `expected` attribute to check if the same error message actually matches in case of failure
+* We can also use the `Result<T, E>` option in place of panics
+
+### Test Run Control
+* [Read Ch-11: Tests](https://drive.google.com/file/d/1vx_dHJUt00o1J1S901uCFIO431WD8JhG/view)
+* `cargo test` compiles the code in test mode and runs the resulting binary
+* If we want to make sure that tests don't run in parallel because of possible inter-shared states, we could use specify the number of threads using `cargo test --test-threads=1`
+* **Ignoring Specific Tests**
+  * We can add the `#[ignore]` line after the `#[test]` if we want to exclude any test
+  * If we need to run ignored tests, we need to run `cargo test -- --include-ignored`
+
+### Test Organization
+* [Read Ch-11: Tests](https://drive.google.com/file/d/1vx_dHJUt00o1J1S901uCFIO431WD8JhG/view)
+* Mainly 2 categories of tests:
+  * **Unit-Tests:**
+    * Test one specific module in isolation and can test private interfaces
+    * Unit tests are added by adding them in the `tests` module in each file to contain the test functions along with the actual implementation code
+    * The `#[cfg(test)]` tells the Rust compiler to compile and run these codes only when `cargo --test` is invoked
+  * **Integration Tests:**
+    * Tests which are external to the library and test the overall public interface
+    * Generally there is a separate directory for integration tests - `tests`
+    * Each file in the `tests` directory is a separate crate, so we need to bring our library into each test crates' scope 
+    * We don't annotate integration tests with `#[cfg(test)]`. They run automatically when we invoke `cargo --test`
+* If any test in a section fails, the following sections will not run
