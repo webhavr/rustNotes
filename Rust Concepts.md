@@ -24,6 +24,7 @@
 - [Test Run Control](#test-run-control)
 - [Test Organization](#test-organization)
 - [Closures](#closures)
+- [Iterators](#iterators)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -34,7 +35,7 @@
 * [x] Ch-9: Error Handling
 * [x] Ch-10: Generics, Traits, Lifetimes
 * [x] Ch-11: Tests 
-* [ ] Ch-13: Iterators and Closures - 30 - Sat
+* [x] Ch-13: Iterators and Closures
 * [ ] Ch-14: Cargo & Crates - 25 - Sat
 * [ ] Ch-15: Smart Pointers - 49 - Sat
 * [ ] Ch-16: Concurrency - 29 - Sun
@@ -337,7 +338,7 @@ error if you can so the user of the library can decide what they want to do in t
 * If any test in a section fails, the following sections will not run
 
 ### Closures
-*  [Read Ch-13: Tests](https://drive.google.com/file/d/19DzJZpzyLzEm59r0t8hzbLF1wtm5Jltu/view)
+*  [Read Ch-13: Closures & Iterators](https://drive.google.com/file/d/19DzJZpzyLzEm59r0t8hzbLF1wtm5Jltu/view)
 *  A function like construct that can be stored in a variable
 *  Rust Closures are anonymous functions you can save in a variable or pass as arguments to other functions
 *  Closure can be created in one context and called in a totally different context
@@ -372,4 +373,30 @@ error if you can so the user of the library can decide what they want to do in t
     * Move a captured body out of the closure
     * Mutate the captured value
     * Neither move, nor mutate the value
-    * Capture nothing from the environment to begin with 
+    * Capture nothing from the environment to begin with
+
+### Iterators
+*  [Read Ch-13: Closures & Iterators](https://drive.google.com/file/d/19DzJZpzyLzEm59r0t8hzbLF1wtm5Jltu/view)
+*  In Rust, iterators are lazy, meaning they have no effect until you call methods that consume the iterator to use it up
+*  **Calling Next on Iterator**
+      *  Calling the `next` method on an iterator changes internal state that the iterator uses to keep track of where it is in the sequence.
+      *  Each call to `next` eats up an item from the iterator
+* **Iterator Methods**
+      *  `iter` method produces an iterator over immutable references
+      *  `into_iter` method creates an iterator that takes ownership and returns owned values
+      *  `iter_mut` produces an iterator over mutable references
+*  **Iterator Trait**
+   *  All iterators implement a trait named `Iterator`
+* **Adaptors**
+  * **Consuming Adaptors**
+    * Methods that call `next` are consuming adaptors because calling them uses up the iterator
+  * **Iterator Adaptors**
+    * Methods defined on `Iterator` trait that don't consume the iterator
+    * Instrad, they produce iterators by changing some aspect of the original iterator
+    * ```
+      let v1: Vec<i32> = vec![1, 2, 3];
+      let v2: Vec<_> = v1.iter().map(|x| x + 1).collect();
+      ```
+    * Calling the `map` method creates a new iterator and then calling the `collect` method consumes the new iterator
+* **Performance**
+  * Iterators are one of Rust's zero-cost abstractions, means using the abstraction imposes no additional runtime overhead
