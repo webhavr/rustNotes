@@ -441,7 +441,7 @@ error if you can so the user of the library can decide what they want to do in t
       }
       ```
 * **`Deref` Trait & Smart Pointers**
-  * Implementing the `Deref` trait allows you to customize the behavior of derefernce operator
+  * Implementing the `Deref` trait allows you to customize the behavior of dereference operator
   * Allows to treat the smart pointer as a reference in the code
   * **Example**
     ```
