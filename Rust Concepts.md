@@ -26,6 +26,7 @@
 - [Closures](#closures)
 - [Iterators](#iterators)
 - [Smart Pointers](#smart-pointers)
+- [**Box**](#box)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -425,7 +426,8 @@ error if you can so the user of the library can decide what they want to do in t
   * `Box<T>` for allocating values on the heap
   * `Rc<T>` - a reference counting type that enables multiple ownership
   * `Ref<T>` & `RefMut<T>` accessed through the `RefCell<T>` - a type that enforces the borrowing rules at runtime instead of compile time
-* **Box<T>**
+
+### **Box<T>**
   * Allows to store data on the heap rather than stack
   * What remains on the stack is the pointer to the heap data
   * Don't have performance overhead
