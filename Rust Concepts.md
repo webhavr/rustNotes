@@ -25,6 +25,7 @@
 - [Test Organization](#test-organization)
 - [Closures](#closures)
 - [Iterators](#iterators)
+- [Smart Pointers](#smart-pointers)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -400,3 +401,6 @@ error if you can so the user of the library can decide what they want to do in t
     * Calling the `map` method creates a new iterator and then calling the `collect` method consumes the new iterator
 * **Performance**
   * Iterators are one of Rust's zero-cost abstractions, means using the abstraction imposes no additional runtime overhead
+
+### Smart Pointers
+* [Read Ch-15: Smart Pointers](https://drive.google.com/file/d/1TN-GenTdu6QYfxCjsdGRdgruPi4sfT8n/view)
