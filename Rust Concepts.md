@@ -440,3 +440,42 @@ error if you can so the user of the library can decide what they want to do in t
         Nil,
       }
       ```
+* **`Deref` Trait & Smart Pointers**
+  * Implementing the `Deref` trait allows you to customize the behavior of derefernce operator
+  * Allows to treat the smart pointer as a reference in the code
+  * **Example**
+    ```
+    fn main() {
+      let x = 5;
+      let y = &x;
+      assert_eq!(5, x);
+      assert_eq!(5, *y); // Will compile and Run
+      assert_eq(5, y); // Would not compile
+    }
+    ```
+  * Would work because `Box<T>` internally implements the `Deref` trait
+    ```
+    fn main() {
+      let x = 5;
+      let y = Box::new(x);
+      assert_eq!(5, x);
+      assert_eq!(5, *y);
+    }
+    ```
+* **Deref Coercion**
+  * Converts a reference to a type that implements the `Deref` trait into a reference to another type
+  * Works only on types that implement the `Deref` trait
+  * **Interaction with Mutability**
+    * **Immutable Reference**: From `&T` to `&U` when T: `Deref<Target=U>`
+    * **Mutable Reference**: From `&mut T` to `&mut U` when T: `DerefMut<Target=U>`
+    * **Mutable Reference to Immutable Reference**: From `&mut T` to `&U` when T: `Deref<Target=U>`
+      * Rust will coerce a mutable reference to an immutable one.
+      * Rust will not do the opposite
+      * Will not coerce an immutable reference to a mutable one
+      * Because, if we have a mutable reference - it would be the only reference to the data. This does not hold true for immutable reference
+* **`Deref` Trait & Smart Pointers**
+  * Implementing the `Drop` trait allows you to customize the behavior when a value goes out of scope
+  * We can also the drop the value of a SP drop before it goes out of scope.
+    * This is similar to explicitly calling `free`
+    * This is done by the `std::mem::drop`, which is different from the `drop` method in the `Drop` trait
+    * Ownership system also makes sure that references are always valid - ensuring that `drop` gets called only once when the value is no longer being used
