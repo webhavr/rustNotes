@@ -404,3 +404,39 @@ error if you can so the user of the library can decide what they want to do in t
 
 ### Smart Pointers
 * [Read Ch-15: Smart Pointers](https://drive.google.com/file/d/1TN-GenTdu6QYfxCjsdGRdgruPi4sfT8n/view)
+* Pointer - General concept for a variable that contains an address in memory
+* **References**
+  * Indicated by the `&` symbol
+  * Borrow the value that they point to. 
+  * No overhead.
+* **Smart Pointers**
+  * Some of them include a reference counting concept like shared pointers
+  * Own the data they point to
+  * Act like a pointer but also have additional metadata. Additional Overhead
+* **Smart Pointer Traits**
+  * Implement the `Deref` and the `Drop` traits
+  * `Deref`
+    * Allows an instance of the smart pointer struct to behave like a reference
+    * Allows to write code to work with either references or smart pointers
+  * `Drop`
+    * Allows to customize the code that's run when an instance of smart pointer goes out of scope
+    * Similar to C++ Destructor
+* **Types of Smart Pointers**
+  * `Box<T>` for allocating values on the heap
+  * `Rc<T>` - a reference counting type that enables multiple ownership
+  * `Ref<T>` & `RefMut<T>` accessed through the `RefCell<T>` - a type that enforces the borrowing rules at runtime instead of compile time
+* **Box<T>**
+  * Allows to store data on the heap rather than stack
+  * What remains on the stack is the pointer to the heap data
+  * Don't have performance overhead
+  * **Helpful in cases:**
+    * For a type whose size cannot be known at compile time and you want to use a value in context which requires an exact size - in this `Box<T>` pointer
+    * Just want to tranfer the ownership without copying the data
+    * During de-allocation, both the value on the heap, and the pointer variable on the stack are deallocated
+    * Help in declaring recursive types
+      ```
+      enum List {
+        Cons(i32, Box<List>),
+        Nil,
+      }
+      ```
