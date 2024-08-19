@@ -475,7 +475,7 @@ error if you can so the user of the library can decide what they want to do in t
       * Because, if we have a mutable reference - it would be the only reference to the data. This does not hold true for immutable reference
 * **`Deref` Trait & Smart Pointers**
   * Implementing the `Drop` trait allows you to customize the behavior when a value goes out of scope
-  * We can also the drop the value of a SP drop before it goes out of scope.
+  * We can also the drop the value of a SP before it goes out of scope.
     * This is similar to explicitly calling `free`
     * This is done by the `std::mem::drop`, which is different from the `drop` method in the `Drop` trait
     * Ownership system also makes sure that references are always valid - ensuring that `drop` gets called only once when the value is no longer being used
