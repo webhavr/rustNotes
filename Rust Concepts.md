@@ -42,7 +42,7 @@
 * [x] Ch-11: Tests 
 * [x] Ch-13: Iterators and Closures
 * [ ] Ch-14: Cargo & Crates - 25 - Sat
-* [ ] Ch-15: Smart Pointers - 49 - Sat
+* [x] Ch-15: Smart Pointers
 * [ ] Ch-16: Concurrency - 29 - Wed 
 * [ ] Ch-17: OOPS - 27 - Wed
 * [ ] Ch-18: Patterns and Matching - 27 - Thu
