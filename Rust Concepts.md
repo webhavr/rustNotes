@@ -27,6 +27,9 @@
 - [Iterators](#iterators)
 - [Smart Pointers](#smart-pointers)
 - [**Box**](#box)
+- [`RefCell<T>`](#refcellt)
+- [RefCell \& Interior Mutability Pattern](#refcell--interior-mutability-pattern)
+- [Summary of types of pointers](#summary-of-types-of-pointers)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -40,10 +43,10 @@
 * [x] Ch-13: Iterators and Closures
 * [ ] Ch-14: Cargo & Crates - 25 - Sat
 * [ ] Ch-15: Smart Pointers - 49 - Sat
-* [ ] Ch-16: Concurrency - 29 - Sun
-* [ ] Ch-17: OOPS - 27 - Sun
-* [ ] Ch-18: Patterns and Matching - 27 - Sun
-* [ ] Ch-19: Advanced Features - 50 - Mon
+* [ ] Ch-16: Concurrency - 29 - Wed 
+* [ ] Ch-17: OOPS - 27 - Wed
+* [ ] Ch-18: Patterns and Matching - 27 - Thu
+* [ ] Ch-19: Advanced Features - 50 - Sat
   
 ### Ownership
 * [Read Ch-4: - Ownership](https://drive.google.com/file/d/1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU/view)
@@ -428,6 +431,7 @@ error if you can so the user of the library can decide what they want to do in t
   * `Ref<T>` & `RefMut<T>` accessed through the `RefCell<T>` - a type that enforces the borrowing rules at runtime instead of compile time
 
 ### **Box<T>**
+  * [Read Ch-15: Smart Pointers](https://drive.google.com/file/d/1TN-GenTdu6QYfxCjsdGRdgruPi4sfT8n/view)
   * Allows to store data on the heap rather than stack
   * What remains on the stack is the pointer to the heap data
   * Don't have performance overhead
@@ -481,3 +485,51 @@ error if you can so the user of the library can decide what they want to do in t
     * This is similar to explicitly calling `free`
     * This is done by the `std::mem::drop`, which is different from the `drop` method in the `Drop` trait
     * Ownership system also makes sure that references are always valid - ensuring that `drop` gets called only once when the value is no longer being used
+
+### `RefCell<T>`
+* [Read Ch-15: Smart Pointers](https://drive.google.com/file/d/1TN-GenTdu6QYfxCjsdGRdgruPi4sfT8n/view)
+* Multiple ownership in Rust can be enabled by `Rc<T>`, which is reference counting
+* It tracks the number of references to a value to determine whether or not the value is still in use
+* If there are zero references to a value, the value can be cleaned up without any references becoming invalid
+* Similar to Shared pointer in C++
+* **Syntax**
+  ```
+  let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
+  let b = Cons(3, Rc::clone(&a));
+  let c = Cons(4, Rc::clone(&a));
+  ```
+* Each time we call `Rc::clone`, the reference count to data within the `Rc<List>` will increase
+* When we call the `Rc<T>` has an initial reference count of 1.
+* `Rc::clone` is called with reference
+* **2 types of Count:**
+  * `Rc::strong_count`
+    * Prints the reference count
+  * `Rc::weak_count` 
+
+### RefCell<T> & Interior Mutability Pattern
+* [Read Ch-15: Smart Pointers](https://drive.google.com/file/d/1TN-GenTdu6QYfxCjsdGRdgruPi4sfT8n/view)
+* Allows to mutate data even when there are immutable references to that data
+* This is usually disallowed by borrowing rules
+* Rust uses `unsafe` code inside a data structure to bend's Rust usual rules that govern mutation and borrowing
+* Unsafe code indicates to the compiler that we are checking the rules manually instead of relying on the compiler to check them for us
+* We can only use types that use the interior mutability pattern only when we can ensure that the borrowing rules will be followed at runtime, even though the compiler cannot guarantee that
+* **Borrowing Rules at runtime**
+  * Unlike `Rc<T>`, `RefCell<T>` represents single ownership over the data it holds
+  * With references and `Box<T>`, borrowing rules are enforced at compile time
+  * With `RefCell<T>`, these invariants are enforced at runtime
+  * If these rules are broken, the program will panic and exit
+  * This usally affects run-time performance to a small extent
+  * It gives the advantage that certain memory-safe scenarios are then allowed, where they would have been disallowed by the compile time checks
+  * `RefCell<T>` is beneficial in the sense that code follows the borrowing rules but the compiler is unable to understand and guarantee that.
+* Both `Rc<T>` and `RefCell<T>` are only used in single-threaded contexts will generate a compile time error in multi-threaded context
+* A common way to use `RefCell<T>` is in combination with `Rc<T>`. Recall that `Rc<T>` lets you have multiple owners of some data, but it only gives immutable access to that data. If you have an `Rc<T>` that holds a `RefCell<T>`, you can get a value that can have multiple owners and that you can mutate!
+* While using the above, one has to ensure that there is no memory cycle in the code as that would eventually leak memory. To avoid that, we can use `weak_count`
+
+### Summary of types of pointers
+* `Box<T>` type has a known size and points to the data on the heap
+* `Rc<T>` enables multiple owners of the same data; `Box<T>` and `RefCell<T>` have single owners.
+* `Box<T>` allows immutable or mutable borrows checked at compile time; `Rc<T>` allows
+only immutable borrows checked at compile time; `RefCell<T>` allows immutable or
+mutable borrows checked at runtime.
+* Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the
+value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
