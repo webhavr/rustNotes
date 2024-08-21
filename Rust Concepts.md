@@ -536,7 +536,7 @@ mutable borrows checked at runtime.
 value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
 
 ### Cargo & Crates
-* [Read Ch-16: Cargo & Crates](https://drive.google.com/file/d/1gQyTDcOdv3PGvV6xfhcAnapA8enkZF9q/view6 
+* [Read Ch-16: Cargo & Crates](https://drive.google.com/file/d/1gQyTDcOdv3PGvV6xfhcAnapA8enkZF9q/view) 
 * **Cargo has 2 main profiles**
   * `dev` profile - good defaults for development
   * `release` profile - good defaults for release builds
