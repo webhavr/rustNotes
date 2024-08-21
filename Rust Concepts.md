@@ -536,18 +536,19 @@ mutable borrows checked at runtime.
 value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
 
 ### Cargo & Crates
-* Cargo has 2 main profiles
+* [Read Ch-16: Cargo & Crates](https://drive.google.com/file/d/1gQyTDcOdv3PGvV6xfhcAnapA8enkZF9q/view6 
+* **Cargo has 2 main profiles**
   * `dev` profile - good defaults for development
   * `release` profile - good defaults for release builds
 * Profile settings can be added in the `[profile.*]` sections in `Cargo.toml` file
 * `opt-level` tells the optimizations for the code. Applying more optimizations extends compiling time. 
   * In development, we would want less optimizations to compile faster. Default `opt-level` for dev is 0
   * In release, it's best to spend more time compiling but better run-time performance
-* Comments in Rust
+* **Comments in Rust**
   * `//` - Regular comments
   * `///` - Markdown notation for formatting the text
   * `//!` - Adds documentation to the item that contains the comments rather than to items
-* Workspace
+* **Workspace**
   * Set of packages that share the same `Cargo.lock` and output directory
   * Cargo does not assume that crates in a workspace will depend on each other. So we need to be explicit about it
   * Workspace has only 1 `Cargo.lock` file at the top level, rather than having a `Cargo.lock` in each crate's directory. This ensures that all crates are using the same version of all dependencies.
