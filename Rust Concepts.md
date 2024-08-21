@@ -30,6 +30,7 @@
 - [`RefCell<T>`](#refcellt)
 - [RefCell \& Interior Mutability Pattern](#refcell--interior-mutability-pattern)
 - [Summary of types of pointers](#summary-of-types-of-pointers)
+- [Cargo \& Crates](#cargo--crates)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -41,7 +42,7 @@
 * [x] Ch-10: Generics, Traits, Lifetimes
 * [x] Ch-11: Tests 
 * [x] Ch-13: Iterators and Closures
-* [ ] Ch-14: Cargo & Crates - 25 - Sat
+* [x] Ch-14: Cargo & Crates
 * [x] Ch-15: Smart Pointers
 * [ ] Ch-16: Concurrency - 29 - Wed 
 * [ ] Ch-17: OOPS - 27 - Wed
@@ -533,3 +534,22 @@ only immutable borrows checked at compile time; `RefCell<T>` allows immutable or
 mutable borrows checked at runtime.
 * Because `RefCell<T>` allows mutable borrows checked at runtime, you can mutate the
 value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
+
+### Cargo & Crates
+* Cargo has 2 main profiles
+  * `dev` profile - good defaults for development
+  * `release` profile - good defaults for release builds
+* Profile settings can be added in the `[profile.*]` sections in `Cargo.toml` file
+* `opt-level` tells the optimizations for the code. Applying more optimizations extends compiling time. 
+  * In development, we would want less optimizations to compile faster. Default `opt-level` for dev is 0
+  * In release, it's best to spend more time compiling but better run-time performance
+* Comments in Rust
+  * `//` - Regular comments
+  * `///` - Markdown notation for formatting the text
+  * `//!` - Adds documentation to the item that contains the comments rather than to items
+* Workspace
+  * Set of packages that share the same `Cargo.lock` and output directory
+  * Cargo does not assume that crates in a workspace will depend on each other. So we need to be explicit about it
+  * Workspace has only 1 `Cargo.lock` file at the top level, rather than having a `Cargo.lock` in each crate's directory. This ensures that all crates are using the same version of all dependencies.
+  * Making all crates in the workspace use the same dependencies means crates will always be compatible with each other.
+  * `cargo install` helps to install and use binary crates locally
