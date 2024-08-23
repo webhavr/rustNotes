@@ -1,3 +1,9 @@
+- [Basics](#basics)
+- [Threads](#threads)
+  - [Creating a new thread](#creating-a-new-thread)
+  - [Threads finish with Join](#threads-finish-with-join)
+  - [Move Closures with Threads](#move-closures-with-threads)
+
 ## Basics
 * [Read Ch-16: Concurrency](https://drive.google.com/file/d/1NQIZoxgzhrsCfqCUm90hZrIBBeoMxIJF/view)
 * Concurrent Programming - Different parts of a program execute independently
