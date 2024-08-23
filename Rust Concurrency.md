@@ -23,11 +23,11 @@
     use std::time::Duration;
     fn main() {
         thread::spawn(|| {
-        for i in 1..10 {
-            println!("hi number {i} from the spawned thread!");
-            thread::sleep(Duration::from_millis(1));
-        }
-    });
+            for i in 1..10 {
+                println!("hi number {i} from the spawned thread!");
+                thread::sleep(Duration::from_millis(1));
+            }
+        });
     
         for i in 1..5 {
         println!("hi number {i} from the main thread!");
@@ -65,3 +65,14 @@
 ### Move Closures with Threads
 * `move` keyword with closures passed to the `thread::spawn` and closure will take ownership of the values it uses from the environment
 * It transfers the ownership of those values from one thread to another
+* **Example-3**
+    ```
+    use std::thread;
+    fn main() {
+        let v = vec![1, 2, 3];
+        let handle = thread::spawn(move || {
+            println!("Here's a vector: {v:?}");
+        });
+        handle.join().unwrap();
+    }
+    ```
