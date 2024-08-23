@@ -557,4 +557,25 @@ value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
   * `cargo install` helps to install and use binary crates locally
 
 ### OOPS
-* * [Read Ch-17: OOPS](https://drive.google.com/file/d/1NNA7wxM_y_aKULGnIaFlghstcQE9XVv2/view) 
+* [Read Ch-17: OOPS](https://drive.google.com/file/d/1NNA7wxM_y_aKULGnIaFlghstcQE9XVv2/view)
+* Basic characteristics in OOPS
+* **Objects** - provided by `structs`, `enums` & `impl` blocks
+* **Encapsulation**
+  * Implementation details of the object are not accessible to the code using the object
+  * Controlled with the `pub` keyword
+* **Inheritance**
+  * Object can inherit elements from another object's definition - thus gaining the parent object's data and behavior without having to define them again
+  * **Benefits**
+    * Reuse of code
+  * **Polymorphism**
+    * Enabling a child type to be used in the same places as the parent type
+    * Can substitute multiple objects for each other at runtime if they share certain characteristics
+    * Rust uses Generics to abstract over certain types
+    * Rust uses trait bounds to impose constraints on what those types must provide.
+  * Overall, Rust does not use inheritance in strict sense, but uses trait objects in place of them.
+* **Traits**
+  * When we use a trait object, Rust will ensure at compile time that any value used in that context will implement the trait object's trait
+* **State Pattern**
+  * One of the OOPS pattern
+  * Crux of the pattern is that we define a set of states a value can have internally.
+  * States are represented by state objects, and value's behavior changes based on its state 
