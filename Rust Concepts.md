@@ -31,6 +31,7 @@
 - [RefCell \& Interior Mutability Pattern](#refcell--interior-mutability-pattern)
 - [Summary of types of pointers](#summary-of-types-of-pointers)
 - [Cargo \& Crates](#cargo--crates)
+- [OOPS](#oops)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -554,3 +555,6 @@ value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
   * Workspace has only 1 `Cargo.lock` file at the top level, rather than having a `Cargo.lock` in each crate's directory. This ensures that all crates are using the same version of all dependencies.
   * Making all crates in the workspace use the same dependencies means crates will always be compatible with each other.
   * `cargo install` helps to install and use binary crates locally
+
+### OOPS
+* * [Read Ch-17: OOPS](https://drive.google.com/file/d/1NNA7wxM_y_aKULGnIaFlghstcQE9XVv2/view) 
