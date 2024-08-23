@@ -45,8 +45,8 @@
 * [x] Ch-13: Iterators and Closures
 * [x] Ch-14: Cargo & Crates
 * [x] Ch-15: Smart Pointers
-* [ ] Ch-16: Concurrency - 29 - Wed 
-* [ ] Ch-17: OOPS - 27 - Wed
+* [ ] Ch-16: Concurrency - 29 - Fri 
+* [x] Ch-17: OOPS
 * [ ] Ch-18: Patterns and Matching - 27 - Thu
 * [ ] Ch-19: Advanced Features - 50 - Sat
   
