@@ -3,6 +3,7 @@
   - [Creating a new thread](#creating-a-new-thread)
   - [Threads finish with Join](#threads-finish-with-join)
   - [Move Closures with Threads](#move-closures-with-threads)
+- [Message Passing among Threads](#message-passing-among-threads)
 
 ## Basics
 * [Read Ch-16: Concurrency](https://drive.google.com/file/d/1NQIZoxgzhrsCfqCUm90hZrIBBeoMxIJF/view)
@@ -82,3 +83,4 @@
         handle.join().unwrap();
     }
     ```
+## Message Passing among Threads
