@@ -214,10 +214,10 @@
 * This thread safety comes with a performance penalty
 
 ### Send and Sync Traits
-* Send
+* **Send**
   * `Send` marker trait indicates that ownership of values of the type implementing `Send` can be transferred between threads
   * `Rc<T>` does not have `Send` trait. `Arc<T>` has `Send` trait
-* Sync
+* **Sync**
   * `Sync` marker trait indicates that it is safe for the type implementing `Sync` to be referenced from multiple threads
   * Any type `T` is `Sync` if `&T` (immutable reference) is `Send`, meaning the reference can be sent safely to another thread
   * `Rc<T>` is also not `Sync`. `Mutex<T>` has `Sync` trait
