@@ -5,6 +5,11 @@
   - [Move Closures with Threads](#move-closures-with-threads)
 - [Message Passing among Threads](#message-passing-among-threads)
   - [Channels](#channels)
+- [Shared State Concurrency](#shared-state-concurrency)
+  - [Mutexes](#mutexes)
+  - [Multiple Ownership with Multiple Threads](#multiple-ownership-with-multiple-threads)
+  - [Send and Sync Traits](#send-and-sync-traits)
+- [Summary](#summary)
 
 ## Basics
 * [Read Ch-16: Concurrency](https://drive.google.com/file/d/1NQIZoxgzhrsCfqCUm90hZrIBBeoMxIJF/view)
@@ -176,3 +181,48 @@
         println!("Got: {received}");
     }
   ```
+## Shared State Concurrency
+* Shared memory concurrency is like multiple ownership: Multiple threads acan access the same memory location at the same time
+
+### Mutexes
+* Mutex is Mutual Exclusion
+* Mutex only allows only 1 thread to access some data at any given time
+* To access the data in the mutex, a thread must first signal that it wants access by asking to acquire the mutex's lock
+* Lock - a data structure that is part of the mutex that keeps track of who currently has access to the data
+* 2 Rules of Mutex
+  * You must first attempt to acquire the lock before using the data
+  * When you are done with the data that the mutex guards, you must first unlck the data so that other threads can acquire the lock
+* Metaphorically, this is similar to a meeting room with many speakers but with only 1 microphone. A speaker has to get hold of the microphone so that all others can hear him
+* Overall, mutexes are tricky
+* **Example**
+  ```
+    use std::sync::Mutex;
+    fn main() {
+        let m = Mutex::new(5);
+        {
+            let mut num = m.lock().unwrap();
+            *num = 6;
+        }
+        println!("m = {m:?}");
+    }
+  ```
+* `Mutex<T>` is a smart pointer
+
+### Multiple Ownership with Multiple Threads
+* `Rc<T>` is not safe to share across threads. It does not use any concurrency primitives
+* `Arc<T>` is a type like `Rc<T>` that is safe to use in concurrent situations. It is atomic, meaning atomically reference counted type
+* This thread safety comes with a performance penalty
+
+### Send and Sync Traits
+* Send
+  * `Send` marker trait indicates that ownership of values of the type implementing `Send` can be transferred between threads
+  * `Rc<T>` does not have `Send` trait. `Arc<T>` has `Send` trait
+* Sync
+  * `Sync` marker trait indicates that it is safe for the type implementing `Sync` to be referenced from multiple threads
+  * Any type `T` is `Sync` if `&T` (immutable reference) is `Send`, meaning the reference can be sent safely to another thread
+  * `Rc<T>` is also not `Sync`. `Mutex<T>` has `Sync` trait
+
+## Summary
+* Overall, `Mutex<T>` and `Arc<T>` are safe to use in concurrent contexts
+* The type system and borrow checker ensure that code using these solutions won't end up with data races or invalid references
+* Once Rust code compiles, it is assured that it will happily run on multiple threads without any data race issues
