@@ -4,6 +4,7 @@
   - [Threads finish with Join](#threads-finish-with-join)
   - [Move Closures with Threads](#move-closures-with-threads)
 - [Message Passing among Threads](#message-passing-among-threads)
+  - [Channels](#channels)
 
 ## Basics
 * [Read Ch-16: Concurrency](https://drive.google.com/file/d/1NQIZoxgzhrsCfqCUm90hZrIBBeoMxIJF/view)
@@ -84,3 +85,43 @@
     }
     ```
 ## Message Passing among Threads
+* In Message passing, threads communicate by sending each other messages containing data
+* "Do not communicate by sharing memory; instead; share memory by communicating"
+
+### Channels
+* A channel is a general programming concept by which data is sent from one thread to another
+* **2 Halves** 
+  * **Transmitter**
+    * Upstream location where data is sent
+    * One part of the code calls methods on the trasmitter with the data you want to send
+  * **Receiver**
+    * Downstream location where data is received
+    * Another part of the code checks the receiving end for arriving messages
+* A channel is said to be closed if either the transmitter or receiver half is dropped
+* In Rust library, we create `mpsc::channel` - meaning Multiple Producer, Single Consumer channel
+* In short, Rust implements channels means a channel can have multiple sending ends that produce values but only 1 receving end
+* `mpsc::channel` function returns a tuple, the first element of which is the sending end - transmitter, and the second element is the receiving end - the receiver
+* `thread::spawn` is used to create a new thread and then using `move`, `tx` is moved into the closure so the spawned thread owns the `tx`
+* **Example**
+  ```
+    use std::sync::mpsc;
+    use std::thread;
+    fn main() {
+        let (tx, rx) = mpsc::channel();
+        thread::spawn(move || {
+            let val = String::from("hi");
+            tx.send(val).unwrap();
+        });
+        let received = rx.recv().unwrap();
+        println!("Got: {received}");
+    }
+  ```
+* **2 Receive methods**
+  * `recv`
+    * Short for receive, which will block the main thread's execution and wait until the value is sent down the channel
+    * Once a value is sent, `recv` will return `Result<T,E>`
+    * When the transmitter closes, `recv` will return an error to signal that no more values will be coming
+  * `try_recv`
+    * Doesn't block but returns `Result<T,E>`
+    * `Ok` value if the message is available
+    * `Err` value if the message is not available
