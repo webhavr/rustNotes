@@ -118,10 +118,61 @@
   ```
 * **2 Receive methods**
   * `recv`
+    * Blocking
     * Short for receive, which will block the main thread's execution and wait until the value is sent down the channel
     * Once a value is sent, `recv` will return `Result<T,E>`
     * When the transmitter closes, `recv` will return an error to signal that no more values will be coming
   * `try_recv`
+    * Non-Blocking
     * Doesn't block but returns `Result<T,E>`
     * `Ok` value if the message is available
     * `Err` value if the message is not available
+* **Example**
+  * Attempting to use a value that is already sent will result in a compiler error
+  ```
+    use std::sync::mpsc;
+    use std::thread;
+    fn main() {
+        let (tx, rx) = mpsc::channel();
+        thread::spawn(move || {
+            let val = String::from("hi");
+            tx.send(val).unwrap();
+            println!("val is {val}"); // Will give a compiler error, as after send, reciever takes its ownership
+        });
+        let received = rx.recv().unwrap();
+        println!("Got: {received}");
+    }
+  ```
+* We can clone the transmitter which will result in an entirely new transmitter
+* **Example**
+  ```
+    let (tx, rx) = mpsc::channel();
+    let tx1 = tx.clone();
+    thread::spawn(move || {
+        let vals = vec![
+            String::from("hi"),
+            String::from("from"),
+            String::from("the"),
+            String::from("thread"),
+        ];
+        for val in vals {
+            tx1.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+    });
+    thread::spawn(move || {
+        let vals = vec![
+            String::from("more"),
+            String::from("messages"),
+            String::from("for"),
+            String::from("you"),
+        ];
+        for val in vals {
+            tx.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+    });
+    for received in rx {
+        println!("Got: {received}");
+    }
+  ```
