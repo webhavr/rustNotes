@@ -90,6 +90,7 @@
     }
     ```
 ## Message Passing among Threads
+* [Read Ch-16: Concurrency](https://drive.google.com/file/d/1NQIZoxgzhrsCfqCUm90hZrIBBeoMxIJF/view)
 * In Message passing, threads communicate by sending each other messages containing data
 * "Do not communicate by sharing memory; instead; share memory by communicating"
 
@@ -182,6 +183,7 @@
     }
   ```
 ## Shared State Concurrency
+* [Read Ch-16: Concurrency](https://drive.google.com/file/d/1NQIZoxgzhrsCfqCUm90hZrIBBeoMxIJF/view)
 * Shared memory concurrency is like multiple ownership: Multiple threads acan access the same memory location at the same time
 
 ### Mutexes
