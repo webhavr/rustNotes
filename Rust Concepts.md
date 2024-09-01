@@ -33,7 +33,7 @@
 - [Cargo \& Crates](#cargo--crates)
 - [OOPS](#oops)
 - [Patterns](#patterns)
-- [Refuatability](#refuatability)
+- [Refutability](#refutability)
 - [Ignoring Values](#ignoring-values)
 
 ### Pending
@@ -622,11 +622,11 @@ value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
 * for loops
 * **let statements**
   * Syntax
-    * 
-      ```
+    * ```
       let PATTERN = EXPRESSION;
       ```
-### Refuatability
+
+### Refutability
 * [Read Ch-18: Patterns and Matching](https://drive.google.com/file/d/1MnuBqyiKmy2MR-BjAmrLpWE4jCB9-G4p/view)
 * Patterns come in 2 forms - Refutable and Irrefutable
 * **Irrefutable Patterns**
