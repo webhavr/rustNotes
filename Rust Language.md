@@ -1,7 +1,6 @@
 ## Links
 
 - [Links](#links)
-- [Pending](#pending)
 - [Rust Benefits](#rust-benefits)
 - [Rust Structs](#rust-structs)
 - [Rust Primitives](#rust-primitives)
@@ -36,14 +35,6 @@
 | Keywords           | [Here](https://doc.rust-lang.org/std/index.html#keywords)    |
 | Macros             | [Here](https://doc.rust-lang.org/book/ch19-06-macros.html)   |
 
-
-## Pending
-* [ ] unsafe
-* [ ] Defined behavior for everything
-* [ ] unwrap or else
-* [ ] unwrap
-* [ ] expect
-* [ ] ? operator
 
 ## Rust Benefits
 

@@ -1,4 +1,4 @@
-- [Pending](#pending)
+- [Rust Book Chapters](#rust-book-chapters)
 - [Ownership](#ownership)
 - [Borrowing](#borrowing)
 - [Memory Management Comparison](#memory-management-comparison)
@@ -36,7 +36,7 @@
 - [Refutability](#refutability)
 - [Ignoring Values](#ignoring-values)
 
-### Pending
+### Rust Book Chapters
 * [x] Ch-4: Ownership
 * [x] Ch-5: Structs
 * [x] Ch-6: Enums & Pattern Matching
