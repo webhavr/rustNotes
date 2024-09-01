@@ -26,7 +26,7 @@
 - [Closures](#closures)
 - [Iterators](#iterators)
 - [Smart Pointers](#smart-pointers)
-- [**Box**](#box)
+- [Box](#box)
 - [`RefCell<T>`](#refcellt)
 - [RefCell \& Interior Mutability Pattern](#refcell--interior-mutability-pattern)
 - [Summary of types of pointers](#summary-of-types-of-pointers)
@@ -434,7 +434,7 @@ error if you can so the user of the library can decide what they want to do in t
   * `Rc<T>` - a reference counting type that enables multiple ownership
   * `Ref<T>` & `RefMut<T>` accessed through the `RefCell<T>` - a type that enforces the borrowing rules at runtime instead of compile time
 
-### **Box<T>**
+### Box<T>
   * [Read Ch-15: Smart Pointers](https://drive.google.com/file/d/1TN-GenTdu6QYfxCjsdGRdgruPi4sfT8n/view)
   * Allows to store data on the heap rather than stack
   * What remains on the stack is the pointer to the heap data
