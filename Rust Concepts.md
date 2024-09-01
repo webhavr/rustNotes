@@ -584,10 +584,10 @@ value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
   * States are represented by state objects, and value's behavior changes based on its state
 
 ### Patterns
+* [Read Ch-18: Patterns and Matching](https://drive.google.com/file/d/1MnuBqyiKmy2MR-BjAmrLpWE4jCB9-G4p/view)
 * Patterns are special syntax in Rust for matching against the structure of the types
 * **match Arms**
-  * 
-    ```
+  * ```
     match VALUE {
       PATTERN => EXPRESSION,
       PATTERN => EXPRESSION,
@@ -627,6 +627,7 @@ value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
       let PATTERN = EXPRESSION;
       ```
 ### Refuatability
+* [Read Ch-18: Patterns and Matching](https://drive.google.com/file/d/1MnuBqyiKmy2MR-BjAmrLpWE4jCB9-G4p/view)
 * Patterns come in 2 forms - Refutable and Irrefutable
 * **Irrefutable Patterns**
   * Patterns that will match for any possible value are irrefutable
