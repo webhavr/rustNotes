@@ -615,7 +615,6 @@ value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
         _ => println!("something else"),
       }
       ```
-
 * **if let**
   * Similar to match but with the downside that the compiler will not give an error if options are not exhaustive
 * while let conditional loops
