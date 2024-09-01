@@ -50,8 +50,7 @@
 * [x] Ch-15: Smart Pointers
 * [x] Ch-16: Concurrency 
 * [x] Ch-17: OOPS
-* [ ] Ch-18: Patterns and Matching - 27 - Mon
-* [ ] Ch-19: Advanced Features - 50 - Fri
+* [x] Ch-18: Patterns and Matching
   
 ### Ownership
 * [Read Ch-4: - Ownership](https://drive.google.com/file/d/1unEsGBAMhBZHX3FUKQQhlNobcuRXSeaU/view)
