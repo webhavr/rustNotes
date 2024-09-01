@@ -32,6 +32,9 @@
 - [Summary of types of pointers](#summary-of-types-of-pointers)
 - [Cargo \& Crates](#cargo--crates)
 - [OOPS](#oops)
+- [Patterns](#patterns)
+- [Refuatability](#refuatability)
+- [Ignoring Values](#ignoring-values)
 
 ### Pending
 * [x] Ch-4: Ownership
@@ -578,4 +581,66 @@ value inside the `RefCell<T>` even when the `RefCell<T>` is immutable.
 * **State Pattern**
   * One of the OOPS pattern
   * Crux of the pattern is that we define a set of states a value can have internally.
-  * States are represented by state objects, and value's behavior changes based on its state 
+  * States are represented by state objects, and value's behavior changes based on its state
+
+### Patterns
+* Patterns are special syntax in Rust for matching against the structure of the types
+* **match Arms**
+  * 
+    ```
+    match VALUE {
+      PATTERN => EXPRESSION,
+      PATTERN => EXPRESSION,
+      PATTERN => EXPRESSION,
+    }
+    ```
+  * Match expressions need to be exhaustive - meaning all possibilities for the value in the match expression must be accounted for
+  * We could have the catchall expression for the last arm: the particular pattern `_` will match anything
+  * Match arms must use refutable patterns, except for the last arm, which should match any remaining value with an irrefutable pattern
+  * Multiple patterns can be matched using the `|` syntax, which is the pattern `or` operator
+    * ```
+      let x = 1;
+      match x {
+        1 | 2 => println!("one or two"),
+        3 => println!("three"),
+        _ => println!("anything"),
+      }
+      ```
+  * Range match
+    * The `..=` syntax allows us to match to an inclusive range of values.
+    * ```
+      let x = 5;
+      match x {
+        1..=5 => println!("one through five"),
+        _ => println!("something else"),
+      }
+      ```
+
+* **if let**
+  * Similar to match but with the downside that the compiler will not give an error if options are not exhaustive
+* while let conditional loops
+* for loops
+* **let statements**
+  * Syntax
+    * 
+      ```
+      let PATTERN = EXPRESSION;
+      ```
+### Refuatability
+* Patterns come in 2 forms - Refutable and Irrefutable
+* **Irrefutable Patterns**
+  * Patterns that will match for any possible value are irrefutable
+  * `let x = 5;`
+  * Because x matches anything and hence cannot fail to match
+  * `Function parameters`, `let statements`, and `for loops` can only accept irrefutable patterns, because programs cannot do anything meaningful when the patterns don't match
+  * `If let` and `while let` patterns also accept Irrefutable patterns, but with compiler warnings
+* **Refutable Patterns**
+  * Patterns that can fail to match for some possible value are called Refutable
+  * `if let Some(x) = a_value`
+  * Because if the value in `a_value` is `None` rather than `Some`, the `Some(x)` pattern will not match
+  * `If let` and `while let` patterns also accept Refutable patterns
+
+### Ignoring Values
+* Values are ignored = `_`
+* Ignoring an unused variable by starting its name with `_x`
+* Ignoring remaining parts of a value with `..`
